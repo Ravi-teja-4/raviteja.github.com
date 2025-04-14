@@ -1,1 +1,135 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: EV Conversion - Maruti 800 - Ravi Teja Chevuri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        html { scroll-behavior: smooth; }
+        .nav-active { font-weight: 700; color: #2563eb; }
+        section[id] { scroll-margin-top: 80px; }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">Ravi Teja Chevuri</a>
+            <div class="space-x-6 text-lg hidden md:flex">
+                <a href="index.html#about" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">About</a>
+                <a href="index.html#experience" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Experience</a>
+                <a href="index.html#education" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Education</a>
+                <a href="index.html#projects" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 nav-active">Projects</a>
+                <a href="index.html#contact" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <a href="index.html#about" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link">About</a>
+            <a href="index.html#experience" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link">Experience</a>
+            <a href="index.html#education" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link">Education</a>
+            <a href="index.html#projects" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link nav-active">Projects</a>
+            <a href="index.html#contact" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="mb-8">
+            <a href="index.html#projects" class="text-blue-600 hover:underline">&larr; Back to Projects</a>
+        </div>
+
+        <h1 class="text-4xl font-bold mb-6">Electric Vehicle Conversion - Maruti 800</h1>
+        <p class="text-lg text-gray-500 mb-8">February - May 2024</p>
+        <div class="mb-10 bg-gray-200 rounded-lg shadow-inner flex items-center justify-center h-64 md:h-96">
+            <img src="https://placehold.co/800x400/e2e8f0/94a3b8?text=EV+Conversion+Image" alt="EV Conversion Project Image" class="max-h-full max-w-full object-contain rounded-lg" onerror="this.onerror=null; this.src='https://placehold.co/800x400/e2e8f0/64748b?text=Image+Error';">
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-700">Project Overview</h2>
+            <p class="text-gray-700 mb-6 leading-relaxed">
+                This final year mechanical engineering project involved the complete conversion of a Maruti 800 petrol car into a fully functional electric vehicle. Driven by a commitment to promote sustainable transportation and gain practical experience in electric vehicle technology, our team undertook this challenging yet rewarding endeavor. The conversion process encompassed the removal of the internal combustion engine and related components, followed by the design and integration of a suitable electric motor, battery pack, motor controller, and other necessary electrical systems. The successful completion of this project not only resulted in a working EV but also earned university recognition for its innovation and technical execution.
+            </p>
+
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">Key Contributions & Tasks:</h3>
+            <ul class="list-disc list-inside space-y-3 text-gray-700 mb-6 pl-4">
+                <li><strong>Team Leadership & Project Management:</strong> As the team leader for this project involving 18 members, I took the initiative in defining project objectives, delegating tasks based on individual interests and skills, and ensuring effective communication and collaboration throughout the project lifecycle. My leadership was instrumental in successfully meeting project milestones and achieving our final goal.</li>
+                <li><strong>Design and Development of the Gearbox Mount:</strong> Identified the critical challenge of connecting the electric motor to the existing gearbox. I spearheaded the design and development of a custom "Gearbox Mount" component using Fusion 360. This component was designed with simplicity and ease of manufacturing in mind, as no suitable off-the-shelf solution existed. The design focused on effectively transmitting power from the motor shaft to the transmission shaft while ensuring structural integrity.</li>
+                <li><strong>Structural Analysis of the Gearbox Mount:</strong> Conducted comprehensive structural analysis of the designed Gearbox Mount using ANSYS. The simulations aimed to validate the component's durability and safety under operational loads. Key findings included a maximum deformation of [Insert Max Deformation Value and Units from ANSYS] and a maximum shear stress of [Insert Max Shear Stress Value and Units from ANSYS], both well within acceptable limits, ensuring the reliability of the power transmission system.</li>
+                <li><strong>Component Integration:</strong> Played a key role in the physical integration of the electric motor, battery pack, and motor controller into the Maruti 800 chassis. This involved [Specifically describe your tasks, e.g., designing mounting solutions for the battery, routing high-voltage cables, ensuring proper connections].</li>
+                <li><strong>Testing & Validation:</strong> Contributed to the testing and validation phase, which included [Describe the testing procedures, e.g., initial power-on tests, low-speed trials, range testing]. The results demonstrated the successful operation of the converted EV, meeting our initial performance expectations.</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">Technical Details of the Gearbox Mount:</h3>
+            <p class="text-gray-700 mb-6 leading-relaxed">
+                The custom-designed "Gearbox Mount" was crucial for the project's success. Key design considerations included:
+                <ul class="list-disc list-inside space-y-3 text-gray-700 mb-6 pl-4">
+                    <li><strong>Material Selection:</strong> [Specify the material chosen for the mount and the reasoning behind it, e.g., High-strength steel for its durability and machinability].</li>
+                    <li><strong>Design Simplicity:</strong> The design prioritized simple geometries and manufacturing processes to avoid complexities and ensure feasibility with available resources.</li>
+                    <li><strong>Power Transmission Efficiency:</strong> The mount was designed to ensure a direct and efficient transfer of power from the electric motor's shaft to the gearbox input shaft.</li>
+                    <li><strong>Structural Integrity:</strong> As validated by the ANSYS simulations, the design could withstand the expected torsional and shear stresses during vehicle operation.</li>
+                </ul>
+                [Consider adding a sentence about the manufacturing process if you were involved, e.g., "The component was manufactured using [Specify manufacturing process, e.g., CNC machining] based on our CAD model."]
+            </p>
+
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">Technologies Used:</h3>
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Fusion 360</span>
+                <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">CAD Modeling</span>
+                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Finite Element Analysis (FEA)</span>
+                <span class="bg-red-100 text-red-800 text-sm font-medium px-3 py-1 rounded-full">ANSYS</span>
+                <span class="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">Team Leadership</span>
+                <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Project Management</span>
+                <span class="bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">Electric Vehicle Components</span>
+                <span class="bg-teal-100 text-teal-800 text-sm font-medium px-3 py-1 rounded-full">Mechanical Design</span>
+                <span class="bg-lime-100 text-lime-800 text-sm font-medium px-3 py-1 rounded-full">Power Transmission</span>
+                <span class="bg-orange-100 text-orange-800 text-sm font-medium px-3 py-1 rounded-full">Vehicle Conversion</span>
+            </div>
+        </div>
+
+        <div class="mb-10 rounded-lg shadow-md overflow-hidden flex justify-center">
+            <iframe
+                src="https://www.instagram.com/reel/C9wRjB5A2Lf/embed"
+                width="50%"
+                height="850"
+                style="border:none;"
+                allowtransparency="true"
+                allowfullscreen="true"
+                title="Instagram Reel"
+            ></iframe>
+        </div>
+    </main>
+
+    <footer id="contact" class="bg-gray-800 text-gray-300 py-10 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-2">Email: <a href="mailto:nasateja4@gmail.com" class="text-blue-400 hover:underline">nasateja4@gmail.com</a></p>
+            <p class="mb-4">Mobile: <a href="tel:+917569350964" class="text-blue-400 hover:underline">+91 7569350964</a></p>
+            <div class="flex justify-center space-x-4 mb-6">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-white transition duration-300">LinkedIn</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-white transition duration-300">Naukri</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-white transition duration-300">Instagram</a>
+            </div>
+            <p class="text-sm text-gray-500">&copy; <span id="currentYear"></span> Ravi Teja Chevuri. All rights reserved.</p>
+            <p class="text-xs text-gray-600 mt-2">Location: Vizag, Andhra Pradesh, India</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // Mobile Menu Toggle Script
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+            mobileNavLinks.forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); });
+        }
+    </script>
+</body>
+</html>
