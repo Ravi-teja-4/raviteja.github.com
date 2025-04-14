@@ -44,35 +44,94 @@
         <div class="mb-8">
             <a href="index.html#projects" class="text-blue-600 hover:underline">&larr; Back to Projects</a>
         </div>
-        <h1 class="text-4xl font-bold mb-6">Arduino-Based CNC Laser Cutter</h1>
+        <h1 class="text-4xl font-bold mb-6">Wood Laser Engraving Machine</h1>
         <div class="mb-10 bg-gray-200 rounded-lg shadow-inner flex items-center justify-center h-64 md:h-96">
-             <img src="https://placehold.co/800x400/e2e8f0/94a3b8?text=CNC+Laser+Image" alt="CNC Laser Project Image" class="max-h-full max-w-full object-contain rounded-lg" onerror="this.onerror=null; this.src='https://placehold.co/800x400/e2e8f0/64748b?text=Image+Error';">
+            <img src="https://placehold.co/800x400/e2e8f0/94a3b8?text=Laser+Engraver+Image" alt="Wood Laser Engraver Image" class="max-h-full max-w-full object-contain rounded-lg" onerror="this.onerror=null; this.src='https://placehold.co/800x400/e2e8f0/64748b?text=Image+Error';">
         </div>
         <div class="bg-white p-8 rounded-lg shadow-md">
-            <h2 class="text-2xl font-semibold mb-4 text-blue-700">Project Overview</h2>
+            <h2 class="text-2xl font-semibold mb-4 text-blue-700">🔖 Project Overview</h2>
             <p class="text-gray-700 mb-6 leading-relaxed">
-                [Detailed description of the CNC Laser Cutter project. Why did you build it? What materials can it cut/engrave? Describe the construction process, component selection, and software used.]
+                <strong>Project Name:</strong> Wood Laser Engraving Machine<br>
+                I built this machine during my college days to support my basic needs. It is capable of engraving logos and vector images on wood and cardboard, and can cut through 2–3 mm softwood with precision.
             </p>
-            <h3 class="text-xl font-semibold mb-3 text-blue-700">Key Contributions & Tasks:</h3>
-            <ul class="list-disc list-inside space-y-3 text-gray-700 mb-6 pl-4">
-                <li>[Assembled the mechanical frame and linear motion components.]</li>
-                <li>[Wired the Arduino, stepper motor drivers, and laser module.]</li>
-                <li>[Flashed GRBL firmware onto the Arduino.]</li>
-                <li>[Configured and calibrated the machine using OpenBuildsCONTROL or similar software.]</li>
-                <li>[Tested cutting/engraving on various materials.]</li>
+    
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">🧰 Hardware Components</h3>
+            <table class="w-full text-sm text-left text-gray-600 mb-6 border border-gray-300">
+                <thead class="bg-gray-100 text-gray-800">
+                    <tr>
+                        <th class="px-4 py-2 border-b">Component</th>
+                        <th class="px-4 py-2 border-b">Specification/Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="px-4 py-2 border-b">Laser Module</td><td class="px-4 py-2 border-b">0.5W Blue Laser, 210mA, ~445–450 nm</td></tr>
+                    <tr><td class="px-4 py-2 border-b">Stepper Motors</td><td class="px-4 py-2 border-b">NEMA17</td></tr>
+                    <tr><td class="px-4 py-2 border-b">Motor Drivers</td><td class="px-4 py-2 border-b">TB6600</td></tr>
+                    <tr><td class="px-4 py-2 border-b">Controller</td><td class="px-4 py-2 border-b">Arduino Uno</td></tr>
+                    <tr><td class="px-4 py-2 border-b">Mechanical Frame</td><td class="px-4 py-2 border-b">TVS Matrix Printer Axes</td></tr>
+                    <tr><td class="px-4 py-2 border-b">Drive System</td><td class="px-4 py-2 border-b">Belt Drive</td></tr>
+                    <tr><td class="px-4 py-2 border-b">Working Speed</td><td class="px-4 py-2 border-b">5 cm/second</td></tr>
+                    <tr><td class="px-4 py-2 border-b">Work Area</td><td class="px-4 py-2 border-b">23 × 30 cm</td></tr>
+                    <tr><td class="px-4 py-2 border-b">Bed Material</td><td class="px-4 py-2 border-b">Wood</td></tr>
+                    <tr><td class="px-4 py-2 border-b">Calibration Tools</td><td class="px-4 py-2 border-b">Spirit Level, Caliper</td></tr>
+                </tbody>
+            </table>
+    
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">💻 Software Used</h3>
+            <ul class="list-disc list-inside text-gray-700 mb-6 pl-4">
+                <li>Firmware: OpenBuilds GRBL (for Arduino Uno)</li>
+                <li>Control Software: OpenBuilds Control</li>
+                <li>Design to G-code: Inkscape (with G-code extension)</li>
             </ul>
-            <h3 class="text-xl font-semibold mb-3 text-blue-700">Technologies Used:</h3>
-            <div class="flex flex-wrap gap-2 mb-6">
-                 <span class="bg-red-100 text-red-800 text-sm font-medium px-3 py-1 rounded-full">Arduino</span>
-                 <span class="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">Stepper Motors & Drivers</span>
-                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Laser Diode Module</span>
-                 <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">GRBL Firmware</span>
-                 <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">OpenBuildsCONTROL / LaserGRBL</span>
-                 <span class="bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">CNC Technology</span>
-            </div>
-             </div>
+    
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">🛠 Mechanical Design</h3>
+            <p class="text-gray-700 mb-6 leading-relaxed">
+                The axes were salvaged from old TVS Matrix Printers, helping us save ₹5000–₹6000 per axis. The wooden bed was precisely leveled using a spirit level and calibrated with a caliper. A belt drive system ensures smooth motion.
+            </p>
+    
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">⚙️ Working Principle</h3>
+            <ol class="list-decimal list-inside text-gray-700 mb-6 pl-4">
+                <li>Create logo/vector in Inkscape.</li>
+                <li>Convert it to G-code using Inkscape’s plugin.</li>
+                <li>Load G-code into OpenBuilds Control.</li>
+                <li>Arduino Uno interprets G-code via GRBL firmware.</li>
+                <li>Laser engraves or cuts as instructed.</li>
+            </ol>
+    
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">📈 Performance & Results</h3>
+            <ul class="list-disc list-inside text-gray-700 mb-6 pl-4">
+                <li>Successfully engraved on wood and cardboard.</li>
+                <li>Cut 2–3 mm softwood cleanly.</li>
+                <li>Laser power and speed had to be tuned for best results.</li>
+            </ul>
+    
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">💡 Real-World Research & Business Idea</h3>
+            <p class="text-gray-700 mb-6 leading-relaxed">
+                I conducted local market research before starting this project. While shopkeepers charged ₹2500–₹3000 for a 10×15 cm engraving, we offered the same for ₹1500, with student discounts (₹800–₹1000). This helped us earn while learning.
+            </p>
+    
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">🧪 Challenges Faced</h3>
+            <ul class="list-disc list-inside text-gray-700 mb-6 pl-4">
+                <li>Axis alignment and calibration on a wooden base.</li>
+                <li>Laser power limitation required a lot of testing.</li>
+                <li>Budget constraints solved using repurposed printer parts.</li>
+            </ul>
+    
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">🚀 Future Improvements</h3>
+            <ul class="list-disc list-inside text-gray-700 mb-6 pl-4">
+                <li>Upgrade to 2.5W or 5W laser for deeper cuts.</li>
+                <li>Add cooling or air assist system.</li>
+                <li>Include protective casing and emergency stop.</li>
+                <li>Implement auto-homing and limit switches.</li>
+            </ul>
+    
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">✅ Conclusion</h3>
+            <p class="text-gray-700 leading-relaxed">
+                This project helped me build hands-on engineering and entrepreneurship skills. I successfully designed a low-cost laser engraving machine that delivered practical value while staying within a student budget.
+            </p>
+        </div>
     </main>
-
+    
     <footer id="contact" class="bg-gray-800 text-gray-300 py-10 mt-16">
          <div class="container mx-auto px-6 text-center">
              <p class="mb-2">Email: <a href="mailto:nasateja4@gmail.com" class="text-blue-400 hover:underline">nasateja4@gmail.com</a></p>
