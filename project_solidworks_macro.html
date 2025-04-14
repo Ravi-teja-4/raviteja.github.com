@@ -51,23 +51,36 @@
         <div class="bg-white p-8 rounded-lg shadow-md">
             <h2 class="text-2xl font-semibold mb-4 text-blue-700">Project Overview</h2>
             <p class="text-gray-700 mb-6 leading-relaxed">
-                [Detailed description of the SolidWorks Macro project. What repetitive task did it automate? How did it improve efficiency? Mention the batch conversion process and using ChatGPT for assistance.]
+                In this project, we worked with SolidWorks assembly files (<code>.SLDASM</code>) that contained multiple configurations. SolidWorks Premium already has a built-in feature to export each configuration as a separate part file, but I recreated this functionality using custom macros.
+                <br><br>
+                I wrote two types of macros using the SolidWorks API:
+                <br><br>
+                <strong>1. Macro for open assemblies:</strong> When an assembly file is already open in SolidWorks and this macro is executed, it prompts the user for a destination folder. Each configuration in the open assembly is then saved as an individual <code>.SLDPRT</code> file using the configuration name.
+                <br><br>
+                <strong>2. Batch conversion macro:</strong> This macro is designed to handle multiple files. It asks for a <em>source folder</em> (containing the assemblies with configurations) and a <em>destination folder</em>. It opens each assembly one by one, extracts the configured parts, and saves them as individual <code>.SLDPRT</code> files in a newly created folder named after each assembly.
             </p>
+    
             <h3 class="text-xl font-semibold mb-3 text-blue-700">Key Contributions & Tasks:</h3>
             <ul class="list-disc list-inside space-y-3 text-gray-700 mb-6 pl-4">
-                <li>[Developed VBA macro logic for file conversion.]</li>
-                <li>[Implemented error handling for different file types/states.]</li>
-                <li>[Created a user interface (if applicable) for selecting files/options.]</li>
-                <li>[Refined macro performance and reliability.]</li>
+                <li>Developed macro logic to automate the export of configuration parts into <code>.SLDPRT</code> files.</li>
+                <li>Handled both live and batch scenarios with user prompts for file paths and folders.</li>
+                <li>Ensured naming consistency and organization by creating folders for each assembly.</li>
+                <li>Optimized the script to handle large assemblies and multiple configurations efficiently.</li>
             </ul>
+    
             <h3 class="text-xl font-semibold mb-3 text-blue-700">Technologies Used:</h3>
             <div class="flex flex-wrap gap-2 mb-6">
                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">SolidWorks API</span>
                 <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">VBA</span>
                 <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">ChatGPT (Assistance)</span>
-                <span class="bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">[Other Tool]</span>
+                <span class="bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">Automation Scripting</span>
             </div>
-            </div>
+    
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">Challenges & Solutions:</h3>
+            <p class="text-gray-700 leading-relaxed">
+                Handling multiple configurations within assemblies and maintaining organized output required careful scripting. Another challenge was ensuring the macros worked reliably in both open and batch modes. I addressed these using SolidWorks API features for configurations and proper folder management logic, ensuring smooth automation even across complex assemblies.
+            </p>
+        </div>
     </main>
 
     <footer id="contact" class="bg-gray-800 text-gray-300 py-10 mt-16">
