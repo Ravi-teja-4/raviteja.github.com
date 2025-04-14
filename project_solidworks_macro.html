@@ -13,6 +13,25 @@
         html { scroll-behavior: smooth; }
         .nav-active { font-weight: 700; color: #2563eb; }
          section[id] { scroll-margin-top: 80px; }
+            /* Responsive video container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000; /* Optional background for the container */
+            border-radius: 0.5rem; /* Match rounded corners */
+        }
+        .video-container iframe,
+        .video-container object,
+        .video-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -80,6 +99,15 @@
             <p class="text-gray-700 leading-relaxed">
                 Handling multiple configurations within assemblies and maintaining organized output required careful scripting. Another challenge was ensuring the macros worked reliably in both open and batch modes. I addressed these using SolidWorks API features for configurations and proper folder management logic, ensuring smooth automation even across complex assemblies.
             </p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-700">Project Demo</h2>
+            <p class="text-gray-700 mb-6 leading-relaxed">
+                Watch the video below to see the BOM Automation script in action, demonstrating how it scans files and updates the Google Sheet.
+            </p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/zRhuhkMxTAc?si=9mRyQHGl9457Ruwi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
         </div>
     </main>
 

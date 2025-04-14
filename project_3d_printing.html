@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,78 +10,86 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
-        html { scroll-behavior: smooth; }
-        .nav-active { font-weight: 700; color: #2563eb; }
-        section[id] { scroll-margin-top: 80px; }
-        .video-player-container {
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .nav-active {
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        section[id] {
+            scroll-margin-top: 80px;
+        }
+
+        /* Responsive video container */
+        .video-container {
             position: relative;
-            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
             height: 0;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            background-color: #e2e8f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 0.375rem;
             overflow: hidden;
-            margin-bottom: 1rem;
+            max-width: 100%;
+            background: #000;
+            /* Optional background for the container */
+            border-radius: 0.5rem;
+            /* Match rounded corners */
         }
-        .video-player-container button {
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.25rem;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        .video-player-container img {
+
+        .video-container iframe,
+        .video-container object,
+        .video-container embed {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            cursor: pointer;
-        }
-        .video-player-container .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2rem;
-            padding: 1rem 2rem;
-            border-radius: 0.375rem;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            cursor: pointer;
         }
     </style>
 </head>
+
 <body class="text-gray-800">
 
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-blue-600">Ravi Teja Chevuri</a>
             <div class="space-x-6 text-lg hidden md:flex">
-                <a href="index.html#about" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">About</a>
-                <a href="index.html#experience" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Experience</a>
-                <a href="index.html#education" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Education</a>
-                <a href="index.html#projects" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 nav-active">Projects</a>
-                <a href="index.html#contact" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Contact</a>
+                <a href="index.html#about"
+                    class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">About</a>
+                <a href="index.html#experience"
+                    class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Experience</a>
+                <a href="index.html#education"
+                    class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Education</a>
+                <a href="index.html#projects"
+                    class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 nav-active">Projects</a>
+                <a href="index.html#contact"
+                    class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Contact</a>
             </div>
-             <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
             </button>
         </nav>
-         <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
-            <a href="index.html#about" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link">About</a>
-            <a href="index.html#experience" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link">Experience</a>
-            <a href="index.html#education" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link">Education</a>
-            <a href="index.html#projects" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link nav-active">Projects</a>
-            <a href="index.html#contact" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link">Contact</a>
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <a href="index.html#about"
+                class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link">About</a>
+            <a href="index.html#experience"
+                class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link">Experience</a>
+            <a href="index.html#education"
+                class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link">Education</a>
+            <a href="index.html#projects"
+                class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link nav-active">Projects</a>
+            <a href="index.html#contact"
+                class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link">Contact</a>
         </div>
     </header>
 
@@ -90,56 +99,131 @@
         </div>
         <h1 class="text-4xl font-bold mb-6">3D Printing Projects</h1>
         <div class="mb-10 bg-gray-200 rounded-lg shadow-inner flex items-center justify-center h-64 md:h-96">
-             <img src="https://placehold.co/800x400/e2e8f0/94a3b8?text=3D+Printing+Image" alt="3D Printing Project Image" class="max-h-full max-w-full object-contain rounded-lg" onerror="this.onerror=null; this.src='https://placehold.co/800x400/e2e8f0/64748b?text=Image+Error';">
-             </div>
+            <img src="./static/3dModel.jpeg" alt="3D Printing Project Image"
+                class="max-h-full max-w-full object-contain rounded-lg"
+                onerror="this.onerror=null; this.src='https://placehold.co/800x400/e2e8f0/64748b?text=Image+Error';">
+        </div>
         <div class="bg-white p-8 rounded-lg shadow-md">
             <h2 class="text-2xl font-semibold mb-4 text-blue-700">Project Overview</h2>
             <p class="text-gray-700 mb-6 leading-relaxed">
-                This section showcases a collection of 3D printing projects I have undertaken to solve practical problems and explore the capabilities of additive manufacturing. These projects range from creating custom accessories for existing machinery to designing components for new systems. The primary motivation behind these projects is to find cost-effective and tailored solutions that meet specific requirements. I have utilized various 3D printers, including FDM (Fused Deposition Modeling) technology, and experimented with different materials like PLA and ABS to achieve the desired functionality and durability. The design process typically involves CAD software such as SolidWorks and Fusion 360, followed by slicing and printing using software like Cura or PrusaSlicer.
+                This section showcases a collection of 3D printing projects I have undertaken to solve practical
+                problems and explore the capabilities of additive manufacturing. These projects range from creating
+                custom accessories for existing machinery to designing components for new systems. The primary
+                motivation behind these projects is to find cost-effective and tailored solutions that meet specific
+                requirements. I have utilized various 3D printers, including FDM (Fused Deposition Modeling) technology,
+                and experimented with different materials like PLA and ABS to achieve the desired functionality and
+                durability. The design process typically involves CAD software such as SolidWorks and Fusion 360,
+                followed by slicing and printing using software like Cura or PrusaSlicer.
             </p>
 
-            <h3 class="text-xl font-semibold mb-3 text-blue-700">1. Lathe 3-Jaw Chuck for Laser Engraving Machine</h3>
-            <div class="video-player-container">
-                <img src="https://placehold.co/800x450/cccccc/999999?text=Lathe+3-Jaw+Chuck+Video" alt="Lathe 3-Jaw Chuck Video Placeholder">
-                <button class="play-button">▶</button>
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">1. Agricultural Based Rover</h3>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Ufpl-cCSnvQ?si=dTqGJRPG_FMZn_x-"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-             <p class="text-gray-700 mb-4 leading-relaxed">
-                The objective of this project was to upgrade my laser engraving machine to enable it to print logos and names on rings. This required a rotating bed to hold the ring securely and rotate it precisely along the X-axis during the engraving process. Commercially available small chucks suitable for this purpose were priced between ₹2,000 to ₹3,000, which I found to be expensive. To overcome this, I designed and 3D printed my own 3-jaw chuck. The design was created using [Specify CAD Software Used, e.g., Fusion 360], keeping in mind the dimensions required to hold various ring sizes and the mounting mechanism for the laser engraver. The chuck was printed using [Specify Material Used, e.g., PLA] for its rigidity and ease of printing. After printing, the chuck was tested for its holding capability and rotational accuracy, successfully enabling ring engraving.
+            <p class="text-gray-700 mb-4 leading-relaxed">
+                I had the opportunity to work with students from K.I.T.E. Engineering College on an interesting project.
+                They needed a special type of agricultural tool called a rower, which is used for various tasks in
+                farming. The students came to me with specific ideas and needs for this rower. They told me exactly how
+                big it should be (its length and width), how much weight it needed to be able to pull, and even the
+                steepest hills it should be able to climb. My job was to take all of these requirements and design a
+                rower that could do everything they needed. To do this, I used my knowledge of mechanical engineering
+                and performed several calculations. These calculations helped me figure out the best materials to use,
+                the right sizes for different parts, and how to make sure the rower would be strong enough to handle the
+                loads and climb the inclines. The goal of my design was to create a rower that was not only functional
+                but also easy to build. By using mechanical calculations, I could ensure that the design would meet all
+                the students' requirements and be safe and efficient for agricultural work. This project involved
+                understanding the students' needs, applying engineering principles, and creating a design that could
+                potentially be manufactured into a real working tool.
+            </p>
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">2. Lathe 3-Jaw Chuck for Laser Engraving Machine</h3>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://youtube.com/embed/KeGhfBr_LA0?si=fD__zWQZRV-A4Gou"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p class="text-gray-700 mb-4 leading-relaxed">
+                The objective of this project was to upgrade my laser engraving machine to enable it to print logos and
+                names on rings. This required a rotating bed to hold the ring securely and rotate it precisely along the
+                X-axis during the engraving process. Commercially available small chucks suitable for this purpose were
+                priced between ₹2,000 to ₹3,000, which I found to be expensive. To overcome this, I designed and 3D
+                printed my own 3-jaw chuck. The design was created using [Specify CAD Software Used, e.g., Fusion 360],
+                keeping in mind the dimensions required to hold various ring sizes and the mounting mechanism for the
+                laser engraver. The chuck was printed using [Specify Material Used, e.g., PLA] for its rigidity and ease
+                of printing. After printing, the chuck was tested for its holding capability and rotational accuracy,
+                successfully enabling ring engraving.
             </p>
 
-            <h3 class="text-xl font-semibold mb-3 text-blue-700">2. Rotating Bed for Model Display</h3>
-            <div class="video-player-container">
-                <img src="https://placehold.co/800x450/cccccc/999999?text=Rotating+Bed+Video" alt="Rotating Bed Video Placeholder">
-                <button class="play-button">▶</button>
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">3. Rotating Bed for Model Display</h3>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://youtube.com/embed/-SqQ3uOOTR8?si=wM1Ui7LZNWdYgmf1"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-             <p class="text-gray-700 mb-4 leading-relaxed">
-                This project was driven by the need to showcase the 3D models I have designed in a more dynamic way, specifically while recording videos. I wanted a simple yet effective rotating platform that could smoothly turn the models, providing a 360-degree view for better presentation. I designed a rotating bed with a circular platform using [Specify CAD Software Used, e.g., SolidWorks]. The design focused on simplicity and ease of printing. It consists of a base and a rotating top, possibly with provisions for a small motor in future iterations for automated rotation. Printed using [Specify Material Used, e.g., PLA], this rotating bed has proven useful in creating engaging videos of my 3D printed creations.
+            <p class="text-gray-700 mb-4 leading-relaxed">
+                This project was driven by the need to showcase the 3D models I have designed in a more dynamic way,
+                specifically while recording videos. I wanted a simple yet effective rotating platform that could
+                smoothly turn the models, providing a 360-degree view for better presentation. I designed a rotating bed
+                with a circular platform using [Specify CAD Software Used, e.g., SolidWorks]. The design focused on
+                simplicity and ease of printing. It consists of a base and a rotating top, possibly with provisions for
+                a small motor in future iterations for automated rotation. Printed using [Specify Material Used, e.g.,
+                PLA], this rotating bed has proven useful in creating engaging videos of my 3D printed creations.
             </p>
 
-            <h3 class="text-xl font-semibold mb-3 text-blue-700">3. Upgrading CNC Laser Engraver Z-Axis for Wood Carving</h3>
-            <div class="video-player-container">
-                <img src="https://placehold.co/800x450/cccccc/999999?text=CNC+Z-Axis+Upgrade+Video" alt="CNC Z-Axis Upgrade Video Placeholder">
-                <button class="play-button">▶</button>
-            </div>
-             <p class="text-gray-700 mb-4 leading-relaxed">
-                My goal with this project was to expand the functionality of my existing CNC laser engraver to include wood carving and milling capabilities, specifically targeting the ability to engrave wood and aluminum with a controlled depth of 1mm per pass. To achieve this, the primary requirement was an upgrade to the Z-axis of the machine. I designed a new Z-axis assembly using [Specify CAD Software Used, e.g., Fusion 360] that could accommodate a spindle motor suitable for milling. The design focused on rigidity and precision to ensure accurate and consistent cutting depth. Considerations included the mounting mechanism for the spindle, the travel distance of the Z-axis, and the overall stability of the machine. The planned implementation involves using a [Specify Spindle Type] spindle motor and appropriate end mills to achieve the desired 1mm depth per pass in wood and aluminum.
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">4. Upgrading CNC Laser Engraver Z-Axis for Wood Carving
+            </h3>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://youtube.com/embed/zGyGgTdxowI?si=ekTqg493JGUY7oMv"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div> 
+            <p class="text-gray-700 mb-4 leading-relaxed">
+                My goal with this project was to expand the functionality of my existing CNC laser engraver to include
+                wood carving and milling capabilities, specifically targeting the ability to engrave wood and aluminum
+                with a controlled depth of 1mm per pass. To achieve this, the primary requirement was an upgrade to the
+                Z-axis of the machine. I designed a new Z-axis assembly using [Specify CAD Software Used, e.g., Fusion
+                360] that could accommodate a spindle motor suitable for milling. The design focused on rigidity and
+                precision to ensure accurate and consistent cutting depth. Considerations included the mounting
+                mechanism for the spindle, the travel distance of the Z-axis, and the overall stability of the machine.
+                The planned implementation involves using a [Specify Spindle Type] spindle motor and appropriate end
+                mills to achieve the desired 1mm depth per pass in wood and aluminum.
             </p>
 
-            <h3 class="text-xl font-semibold mb-3 text-blue-700">4. Custom Stepper Motors for 6-Axis Robotic Arm</h3>
-            <div class="video-player-container">
-                <img src="https://placehold.co/800x450/cccccc/999999?text=Robotic+Arm+Stepper+Motor+Video" alt="Robotic Arm Stepper Motor Video Placeholder">
-                <button class="play-button">▶</button>
-            </div>
-             <p class="text-gray-700 mb-6 leading-relaxed">
-                As part of a larger project to design a 6-axis robotic arm, I encountered a challenge related to the fitting of stepper motors at specific joints. The available off-the-shelf stepper motors did not perfectly match the dimensional requirements of the robotic arm design, particularly the alignment of the mounting holes for nuts and bolts. To address this, I decided to design custom stepper motor housings using [Specify CAD Software Used, e.g., SolidWorks]. The design process involved carefully measuring the required dimensions and ensuring that the mounting holes would precisely align with the corresponding points on the robotic arm structure. While the internal components of the stepper motors would likely be standard, the custom-designed housings would guarantee a perfect fit, which is crucial for the structural integrity and functionality of the robotic arm. This project highlights the ability of 3D printing to create custom mechanical components tailored to specific design needs.
+            <h3 class="text-xl font-semibold mb-3 text-blue-700">5. Custom Stepper Motors for 6-Axis Robotic Arm</h3>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://youtube.com/embed/zGyGgTdxowI?si=ekTqg493JGUY7oMv"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div> 
+            <p class="text-gray-700 mb-6 leading-relaxed">
+                As part of a larger project to design a 6-axis robotic arm, I encountered a challenge related to the
+                fitting of stepper motors at specific joints. The available off-the-shelf stepper motors did not
+                perfectly match the dimensional requirements of the robotic arm design, particularly the alignment of
+                the mounting holes for nuts and bolts. To address this, I decided to design custom stepper motor
+                housings using [Specify CAD Software Used, e.g., SolidWorks]. The design process involved carefully
+                measuring the required dimensions and ensuring that the mounting holes would precisely align with the
+                corresponding points on the robotic arm structure. While the internal components of the stepper motors
+                would likely be standard, the custom-designed housings would guarantee a perfect fit, which is crucial
+                for the structural integrity and functionality of the robotic arm. This project highlights the ability
+                of 3D printing to create custom mechanical components tailored to specific design needs.
             </p>
 
             <h3 class="text-xl font-semibold mb-3 text-blue-700">Key Skills & Learnings:</h3>
             <ul class="list-disc list-inside space-y-3 text-gray-700 mb-6 pl-4">
-                <li>Advanced CAD modeling for additive manufacturing, including designing for specific functional requirements and constraints.</li>
-                <li>Understanding the properties of different 3D printing materials (e.g., PLA, ABS) and selecting the appropriate material for each application.</li>
-                <li>Optimizing 3D print settings (e.g., layer height, infill density) to achieve the desired strength, accuracy, and surface finish.</li>
-                <li>Reverse engineering and creating custom components to integrate with existing machinery and systems.</li>
+                <li>Advanced CAD modeling for additive manufacturing, including designing for specific functional
+                    requirements and constraints.</li>
+                <li>Understanding the properties of different 3D printing materials (e.g., PLA, ABS) and selecting the
+                    appropriate material for each application.</li>
+                <li>Optimizing 3D print settings (e.g., layer height, infill density) to achieve the desired strength,
+                    accuracy, and surface finish.</li>
+                <li>Reverse engineering and creating custom components to integrate with existing machinery and systems.
+                </li>
                 <li>Problem-solving through iterative design and prototyping using 3D printing.</li>
             </ul>
             <h3 class="text-xl font-semibold mb-3 text-blue-700">Technologies Used:</h3>
@@ -147,58 +231,77 @@
                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">SolidWorks</span>
                 <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Fusion 360</span>
                 <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">CAD Modeling</span>
-                <span class="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">3D Printing (FDM)</span>
-                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Slicer Software (Cura)</span>
-                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Slicer Software (PrusaSlicer)</span>
-                <span class="bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">[Specify Printer Model(s)]</span>
-                <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">PLA Filament</span>
-                <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">ABS Filament</span>
+                <span class="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">3D Printing
+                    (FDM)</span>
+                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Slicer Software
+                    (Cura)</span>
+                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Slicer Software
+                    (PrusaSlicer)</span>
+                <span class="bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">[Specify Printer
+                    Model(s)]</span>
+                <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">PLA
+                    Filament</span>
+                <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">ABS
+                    Filament</span>
             </div>
         </div>
 
-        <section class="mt-12">
+        <!-- <section class="mt-12">
             <h2 class="text-3xl font-bold mb-6 text-blue-700">More Videos</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="video-player-container">
-                    <img src="https://placehold.co/600x400/cccccc/999999?text=Video+1" alt="Video 1 Placeholder">
-                    <button class="play-button">▶</button>
-                </div>
-                <div class="video-player-container">
-                    <img src="https://placehold.co/600x400/cccccc/999999?text=Video+2" alt="Video 2 Placeholder">
-                    <button class="play-button">▶</button>
-                </div>
-                <div class="video-player-container">
-                    <img src="https://placehold.co/600x400/cccccc/999999?text=Video+3" alt="Video 3 Placeholder">
-                    <button class="play-button">▶</button>
-                </div>
-                </div>
-        </section>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://placehold.co/600x400/cccccc/999999?text=Video+3"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div> 
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://placehold.co/600x400/cccccc/999999?text=Video+3"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div> 
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://placehold.co/600x400/cccccc/999999?text=Video+3"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div> 
+            </div>
+        </section> -->
     </main>
 
     <footer id="contact" class="bg-gray-800 text-gray-300 py-10 mt-16">
-         <div class="container mx-auto px-6 text-center">
-             <p class="mb-2">Email: <a href="mailto:nasateja4@gmail.com" class="text-blue-400 hover:underline">nasateja4@gmail.com</a></p>
-             <p class="mb-4">Mobile: <a href="tel:+917569350964" class="text-blue-400 hover:underline">+91 7569350964</a></p>
-             <div class="flex justify-center space-x-4 mb-6">
-                 <a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-white transition duration-300">LinkedIn</a>
-                 <a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-white transition duration-300">Naukri</a>
-                 <a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-white transition duration-300">Instagram</a>
-             </div>
-             <p class="text-sm text-gray-500">&copy; <span id="currentYear"></span> Ravi Teja Chevuri. All rights reserved.</p>
-             <p class="text-xs text-gray-600 mt-2">Location: Vizag, Andhra Pradesh, India</p>
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-2">Email: <a href="mailto:nasateja4@gmail.com"
+                    class="text-blue-400 hover:underline">nasateja4@gmail.com</a></p>
+            <!-- <p class="mb-4">Mobile: <a href="tel:+917569350964" class="text-blue-400 hover:underline">+91 7569350964</a> -->
+            </p>
+            <div class="flex justify-center space-x-4 mb-6">
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                    class="text-blue-400 hover:text-white transition duration-300">LinkedIn</a>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                    class="text-blue-400 hover:text-white transition duration-300">Naukri</a>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                    class="text-blue-400 hover:text-white transition duration-300">Instagram</a>
+            </div>
+            <p class="text-sm text-gray-500">&copy; <span id="currentYear"></span> Ravi Teja Chevuri. All rights
+                reserved.</p>
+            <p class="text-xs text-gray-600 mt-2">Location: Vizag, Andhra Pradesh, India</p>
         </div>
     </footer>
 
     <script>
         document.getElementById('currentYear').textContent = new Date().getFullYear();
         // Mobile Menu Toggle Script
-         const menuButton = document.getElementById('mobile-menu-button');
-         const mobileMenu = document.getElementById('mobile-menu');
-         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-         if (menuButton && mobileMenu) {
-             menuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
-             mobileNavLinks.forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); });
-         }
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+            mobileNavLinks.forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); });
+        }
     </script>
 </body>
+
 </html>
