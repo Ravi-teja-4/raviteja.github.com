@@ -1,0 +1,23 @@
+/* Apply Inter font globally */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc; /* Tailwind gray-50 */
+}
+/* Simple smooth scroll for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+/* Custom styles for active nav link */
+.nav-active {
+    font-weight: 700;
+    color: #2563eb; /* Tailwind blue-600 */
+}
+/* Ensure sections have enough top padding for sticky header */
+section[id] {
+    scroll-margin-top: 80px; /* Adjust based on header height */
+}
+
+.rounded-full {
+    width: 15rem; /* 240px */
+    height: 15rem; /* 240px */
+}

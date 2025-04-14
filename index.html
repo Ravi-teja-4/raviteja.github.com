@@ -9,24 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Apply Inter font globally */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* Tailwind gray-50 */
-        }
-        /* Simple smooth scroll for anchor links */
-        html {
-            scroll-behavior: smooth;
-        }
-        /* Custom styles for active nav link */
-        .nav-active {
-            font-weight: 700;
-            color: #2563eb; /* Tailwind blue-600 */
-        }
-        /* Ensure sections have enough top padding for sticky header */
-        section[id] {
-            scroll-margin-top: 80px; /* Adjust based on header height */
-        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -59,9 +41,9 @@
         <section id="hero" class="text-center mb-16 pt-8 md:pt-12 flex flex-col md:flex-row items-center gap-8">
              <div class="flex-shrink-0 mb-6 md:mb-0">
                 <img
-                    src="https://placehold.co/150x150/e2e8f0/3b82f6?text=RC"
+                    src="./static/me.jpeg"
                     alt="Ravi Teja Chevuri Profile Picture"
-                    class="rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-blue-200 shadow-lg mx-auto"
+                    class="rounded-full w-42 h-42 md:w-60 md:h-60 object-cover border-4 border-blue-200 shadow-lg mx-auto"
                     onerror="this.onerror=null; this.src='https://placehold.co/150x150/e2e8f0/64748b?text=Image+Error';"
                  >
             </div>
@@ -151,7 +133,7 @@
              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                    <img src="https://placehold.co/600x400/e2e8f0/94a3b8?text=BOM+Automation" alt="BOM Automation Project" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Img+Error';">
+                    <img src="./static/bom.png" alt="BOM Automation Project" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Img+Error';">
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-semibold mb-2 text-blue-700">BOM Automation & Project Tracking</h3>
                         <p class="text-gray-600 mb-4 text-sm flex-grow">Managed large BOM files and automated data imports using Google Sheets, Python, and APIs.</p>

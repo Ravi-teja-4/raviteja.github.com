@@ -13,6 +13,25 @@
         html { scroll-behavior: smooth; }
         .nav-active { font-weight: 700; color: #2563eb; }
         section[id] { scroll-margin-top: 80px; } /* Adjust for sticky header */
+        /* Responsive video container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000; /* Optional background for the container */
+            border-radius: 0.5rem; /* Match rounded corners */
+        }
+        .video-container iframe,
+        .video-container object,
+        .video-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -24,7 +43,7 @@
                 <a href="index.html#about" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">About</a>
                 <a href="index.html#experience" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Experience</a>
                 <a href="index.html#education" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Education</a>
-                <a href="index.html#projects" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 nav-active">Projects</a> 
+                <a href="index.html#projects" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300 nav-active">Projects</a>
                 <a href="index.html#contact" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Contact</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
@@ -48,10 +67,10 @@
 
         <h1 class="text-4xl font-bold mb-6">Automating Project Tracking with Google Sheets and Python</h1>
         <div class="mb-10 bg-gray-200 rounded-lg shadow-inner flex items-center justify-center h-64 md:h-96">
-             <img src="https://placehold.co/800x400/e2e8f0/94a3b8?text=BOM+Automation+Image" alt="BOM Automation Project Image" class="max-h-full max-w-full object-contain rounded-lg" onerror="this.onerror=null; this.src='https://placehold.co/800x400/e2e8f0/64748b?text=Image+Error';">
-             </div>
+             <img src="./static/bom.png" alt="BOM Automation Project Image" class="max-h-full max-w-full object-contain rounded-lg" onerror="this.onerror=null; this.src='https://placehold.co/800x400/e2e8f0/64748b?text=Image+Not+Found';">
+        </div>
 
-         <div class="bg-white p-8 rounded-lg shadow-md">
+        <div class="bg-white p-8 rounded-lg shadow-md mb-12">
                 <h2 class="text-2xl font-semibold mb-4 text-blue-700">Project Overview</h2>
                 <p class="text-gray-700 mb-6 leading-relaxed">
                     This project was built to solve a major issue in tracking the creation status of more than 3000 part numbers listed in a client-provided Master BOM. The parts were being created and saved locally as SolidWorks assembly or STEP files, but there was no clear way to track which ones were completed. To automate and simplify this, I developed a script in Python that checks the local system for assembly files and updates a Google Sheet accordingly. The script verifies each part number listed in Column A and updates Column B with "Created" or "Not Created". It also fills in the file path, file type (SLDASM or STEP), and the date it was found.
@@ -72,16 +91,31 @@
                 <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Python</span>
                 <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Google Sheets API</span>
                 <span class="bg-red-100 text-red-800 text-sm font-medium px-3 py-1 rounded-full">Google Apps Script</span>
-                
             </div>
 
             <h3 class="text-xl font-semibold mb-3 text-blue-700">Challenges & Solutions:</h3>
-    <p class="text-gray-700 mb-6 leading-relaxed">
-        One of the main challenges was that there was no direct way to monitor the progress of part creation from a long list of part numbers. We were dealing with a large number of files stored in multiple folders. I solved this by automating the process with Python and integrating it with Google Sheets, allowing real-time updates and reducing manual tracking effort. Ensuring correct authentication and file type detection (SLDASM vs STEP) was another technical hurdle, which was handled with proper logic and testing.
-    </p>
-             </div>
-
-    </main>
+            <p class="text-gray-700 mb-6 leading-relaxed">
+                One of the main challenges was that there was no direct way to monitor the progress of part creation from a long list of part numbers. We were dealing with a large number of files stored in multiple folders. I solved this by automating the process with Python and integrating it with Google Sheets, allowing real-time updates and reducing manual tracking effort. Ensuring correct authentication and file type detection (SLDASM vs STEP) was another technical hurdle, which was handled with proper logic and testing.
+            </p>
+         </div>
+         <div class="bg-white p-8 rounded-lg shadow-md">
+             <h2 class="text-2xl font-semibold mb-4 text-blue-700">Project Demo</h2>
+             <p class="text-gray-700 mb-6 leading-relaxed">
+                 Watch the video below to see the BOM Automation script in action, demonstrating how it scans files and updates the Google Sheet.
+             </p>
+             <div class="video-container">
+                 <iframe
+                     width="100px"
+                     height="100px"
+                     src="https://www.youtube.com/watch?v=zRhuhkMxTAc"
+                     title="YouTube video player"
+                     >
+                 </iframe>
+                 <iframe src="https://www.youtube.com/watch?v=zRhuhkMxTAc"
+                 width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                 </div>
+         </div>
+         </main>
 
     <footer id="contact" class="bg-gray-800 text-gray-300 py-10 mt-16">
          <div class="container mx-auto px-6 text-center">
@@ -100,6 +134,7 @@
     <script>
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
          // --- Mobile Menu Toggle ---
          const menuButton = document.getElementById('mobile-menu-button');
          const mobileMenu = document.getElementById('mobile-menu');
@@ -109,6 +144,7 @@
              menuButton.addEventListener('click', () => {
                  mobileMenu.classList.toggle('hidden');
              });
+             // Close menu when a link is clicked
              mobileNavLinks.forEach(link => {
                  link.addEventListener('click', () => {
                      mobileMenu.classList.add('hidden');
