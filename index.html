@@ -1,65 +1,292 @@
-<!DOCTYPE html>
+`<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Construction - Our Website is Getting Better</title>
+    <title>Ravi Teja Chevuri - Mechanical Design Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* Light gray background */
-        }
-        .gradient-bg {
-            background: linear-gradient(135deg, #6366f1, #a855f7); /* Purple gradient */
-        }
     </style>
 </head>
-<body class="bg-gray-100 h-screen flex items-center justify-center">
+<body class="text-gray-800">
 
-    <div class="bg-white rounded-lg shadow-xl p-12 max-w-xl w-full text-center">
-        <header class="mb-8">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20 mx-auto gradient-bg text-white rounded-full p-3 mb-4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.375 1.932 3.375h14.023c1.716 0 2.803-1.875 1.932-3.375a12.012 12.012 0 00-.857-3.348m-9.615 0a12.012 12.012 0 01-.857 3.348m9.615 0a12.012 12.012 0 00.857-3.348M12 7.5h.008v.008H12V7.5z" />
-            </svg>
-            <h1 class="text-3xl font-bold text-gray-800 mb-2">We're Under Construction</h1>
-            <p class="text-lg text-gray-600">Our website is currently undergoing scheduled maintenance. We're working hard to bring you an even better experience. Please check back soon!</p>
-        </header>
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">Ravi Teja Chevuri</a>
+             <div class="space-x-6 text-lg hidden md:flex">
+                <a href="index.html#about" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">About</a>
+                <a href="index.html#experience" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Experience</a>
+                <a href="index.html#education" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Education</a>
+                <a href="index.html#projects" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Projects</a>
+                <a href="index.html#contact" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Contact</a>
+            </div>
+             <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+         <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <a href="index.html#about" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link">About</a>
+            <a href="index.html#experience" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link">Experience</a>
+            <a href="index.html#education" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link">Education</a>
+            <a href="index.html#projects" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link">Projects</a>
+            <a href="index.html#contact" class="block px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-blue-600 mobile-nav-link">Contact</a>
+        </div>
+    </header>
 
-        <main class="mb-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-gray-50 rounded-md p-6 shadow-sm">
-                    <h2 class="text-xl font-semibold text-gray-700 mb-2">Estimated Time of Arrival</h2>
-                    <p class="text-gray-500">We anticipate being back online by:</p>
-                    <p class="text-indigo-600 font-semibold text-lg">April 18, 2025, 10:00 AM IST</p>
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="hero" class="text-center mb-16 pt-8 md:pt-12 flex flex-col md:flex-row items-center gap-8">
+             <div class="flex-shrink-0 mb-6 md:mb-0">
+                <img
+                    src="./static/me.jpeg"
+                    alt="Ravi Teja Chevuri Profile Picture"
+                    class="rounded-full w-42 h-42 md:w-60 md:h-60 object-cover border-4 border-blue-200 shadow-lg mx-auto"
+                    onerror="this.onerror=null; this.src='https://placehold.co/150x150/e2e8f0/64748b?text=Image+Error';"
+                 >
+            </div>
+             <div class="md:text-left text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-3">Ravi Teja Chevuri</h1>
+                <p class="text-xl text-gray-600 mb-5">Mechanical Design Engineer | Solidworks Expert | Automation Enthusiast</p>
+                <p class="max-w-3xl mx-auto md:mx-0 text-lg text-gray-700">
+                    Mechanical Engineer with hands-on experience in designing and prototyping. Seeking to leverage expertise in mechanical design and automation to contribute to innovative solutions and product development.
+                </p>
+            </div>
+        </section>
+
+        <section id="about" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 border-l-4 border-blue-600 pl-4">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-700">Technical Proficiency</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Design & Modeling:</strong> SolidWorks (Parametric, Configuration, VBA Macros), Fusion 360, CATIA, AutoCAD</li>
+                        <li><strong>Simulation & Analysis:</strong> ANSYS (CFD, Static & Transient Structural)</li>
+                        <li><strong>Manufacturing:</strong> CNC Machining, CNC Programming, 3D Printing (FDM, SLS), Pipeline Drafting</li>
+                        <li><strong>Programming:</strong> Python, JavaScript, VBA, Google Sheets API, Google Apps Script</li>
+                        <li><strong>Other:</strong> Sensors & Instrumentation, Actuators & Drives</li>
+                    </ul>
                 </div>
-                <div class="bg-gray-50 rounded-md p-6 shadow-sm">
-                    <h2 class="text-xl font-semibold text-gray-700 mb-2">What We're Working On</h2>
-                    <ul class="list-disc list-inside text-gray-500">
-                        <li>Enhancing user interface</li>
-                        <li>Improving performance and speed</li>
-                        <li>Adding new exciting features</li>
-                        <li>Ensuring security and stability</li>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-700">Key Strengths</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Problem-solving & innovative thinking</li>
+                        <li>Strong analytical and mathematical skills</li>
+                        <li>Hands-on experience in design, prototyping, and manufacturing</li>
+                        <li>Ability to work effectively in dynamic, high-pressure environments</li>
+                        <li>Passionate about sustainable engineering solutions</li>
                     </ul>
                 </div>
             </div>
-        </main>
+        </section>
 
-        <footer class="text-gray-500">
-            <p class="mb-4">In the meantime, you can reach us at:</p>
-            <p><strong class="text-gray-700">Email:</strong> </p>
-            <p><strong class="text-gray-700">Phone:</strong> </p>
-            <div class="mt-6">
-                <a href="#" class="text-blue-500 hover:underline mr-4">Facebook</a>
-                <a href="#" class="text-blue-500 hover:underline mr-4">Twitter</a>
-                <a href="#" class="text-blue-500 hover:underline">LinkedIn</a>
+        <section id="experience" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 border-l-4 border-blue-600 pl-4">Work Experience</h2>
+            <div class="space-y-8">
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                    <h3 class="text-xl font-semibold text-blue-700">Junior Design Engineer</h3>
+                    <p class="text-gray-600 mb-1">Sagex, Diamond Park, Visakhapatnam | Sep 2024 - Present</p>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700 pl-4">
+                        <li>Collaborate with Winchester Interconnect (Orange, CA) on advanced connector solutions.</li>
+                        <li>Utilize SolidWorks for parametric modeling, configuration management, and macro development.</li>
+                        <li>Focus on connector design, ensuring compliance with industry standards and client specs.</li>
+                        <li>Work with cross-functional teams on design feasibility and manufacturability.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                    <h3 class="text-xl font-semibold text-blue-700">CNC Bending & Tube Mill Operator</h3>
+                    <p class="text-gray-600 mb-1">Hoble Bellows Company VSEZ, Duvvada, Visakhapatnam | May 2024 - July 2024</p>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700 pl-4">
+                        <li>Operated CNC bending machines for automobile, generator, and marine engine silencers.</li>
+                        <li>Managed tube mill processes (rectangular sheets to tubes).</li>
+                        <li>Performed routine maintenance and troubleshooting on equipment.</li>
+                    </ul>
+                </div>
             </div>
-            <p class="mt-8 text-xs text-gray-400">&copy; 2025 Your Company Name. All rights reserved.</p>
-        </footer>
-    </div>
+        </section>
+
+        <section id="education" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 border-l-4 border-blue-600 pl-4">Education</h2>
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                    <h3 class="text-xl font-semibold text-blue-700">B.Tech in Mechanical Engineering</h3>
+                    <p class="text-gray-600">Dr. B.R Ambedkar University, Srikakulam, India</p>
+                    <p class="text-gray-500">June 2021 - April 2024 | GPA: 7.75</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                    <h3 class="text-xl font-semibold text-blue-700">Diploma in Mechanical Engineering</h3>
+                    <p class="text-gray-600">Thandrapaparaya Polytechnic (SBTET), Vizianagaram, India</p>
+                    <p class="text-gray-500">June 2018 - April 2021 | Percentage: 71%</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                    <h3 class="text-xl font-semibold text-blue-700">High School (C.B.S.E)</h3>
+                    <p class="text-gray-600">D.A.V. Centenary Public School, Visakhapatnam, India</p>
+                    <p class="text-gray-500">Graduated: March 2018</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="mb-16">
+             <h2 class="text-3xl font-bold mb-8 border-l-4 border-blue-600 pl-4">Projects</h2>
+             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="./static/3dModel.jpeg" alt="3D Modeling & 3D Printing Projects" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Img+Error';">
+                   <div class="p-6 flex flex-col flex-grow">
+                       <h3 class="text-xl font-semibold mb-2 text-blue-700">3D Modeling & 3D Printing Projects</h3>
+                       <p class="text-gray-600 mb-4 text-sm flex-grow">Developed models like a lathe 3-jaw chuck and a 4-speed gearbox (with ANSYS analysis).</p>
+                        <a href="project_3d_printing.html" class="mt-auto inline-block bg-blue-100 text-blue-700 font-medium py-2 px-4 rounded-md hover:bg-blue-200 transition duration-300 text-center">View Details</a>
+                   </div>
+               </div>
+               
+               <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                <img src="./static/EV_car.JPG" alt="Electric Vehicle Conversion" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Img+Error';">
+               <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-700">Electric Vehicle Conversion - Maruti 800</h3>
+                        <p class="text-gray-600 mb-4 text-sm flex-grow">Led a team to convert a Maruti 800 to electric, designing mounts and performing simulations.</p>
+                        <a href="project_ev_conversion.html" class="mt-auto inline-block bg-blue-100 text-blue-700 font-medium py-2 px-4 rounded-md hover:bg-blue-200 transition duration-300 text-center">View Details</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="./static/laser.png" alt="CNC Laser Cutting Machine" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Img+Error';">
+                   <div class="p-6 flex flex-col flex-grow">
+                       <h3 class="text-xl font-semibold mb-2 text-blue-700">Arduino-Based CNC Laser Cutter</h3>
+                       <p class="text-gray-600 mb-4 text-sm flex-grow">Built a CNC laser cutter using Arduino, stepper motors/drivers, and OpenBuildsCONTROL.</p>
+                        <a href="project_cnc_laser.html" class="mt-auto inline-block bg-blue-100 text-blue-700 font-medium py-2 px-4 rounded-md hover:bg-blue-200 transition duration-300 text-center">View Details</a>
+                   </div>
+               </div>
+
+               <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="./static/bom.png" alt="BOM Automation Project" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Img+Error';">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-700">Automating Project Tracking with Google Sheets using Python</h3>
+                        <p class="text-gray-600 mb-4 text-sm flex-grow">Managed large BOM files and automated data imports using Google Sheets, Python, and APIs.</p>
+                        <a href="project_bom_automation.html" class="mt-auto inline-block bg-blue-100 text-blue-700 font-medium py-2 px-4 rounded-md hover:bg-blue-200 transition duration-300 text-center">View Details</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                     <img src="./static/macro.png" alt="SolidWorks Macro Automation" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://youtu.be/bX4SZfrD5_c?si=8KXEvHaq93qNFJKm">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-700">SolidWorks Macro Automation</h3>
+                        <p class="text-gray-600 mb-4 text-sm flex-grow">Developed VBA macros (with ChatGPT assistance) for batch conversion of SolidWorks assembly files.</p>
+                         <a href="project_solidworks_macro.html" class="mt-auto inline-block bg-blue-100 text-blue-700 font-medium py-2 px-4 rounded-md hover:bg-blue-200 transition duration-300 text-center">View Details</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                     <img src="./static/arm.jpg" alt="6-Axis Robotic Arm" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Img+Error';">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-700">6-Axis Robotic Arm Development</h3>
+                        <p class="text-gray-600 mb-4 text-sm flex-grow">Designed and developed a 6-axis robotic arm using Fusion 360, Python, and microcontrollers.</p>
+                         <a href="project_robotic_arm.html" class="mt-auto inline-block bg-blue-100 text-blue-700 font-medium py-2 px-4 rounded-md hover:bg-blue-200 transition duration-300 text-center">View Details</a>
+                    </div>
+                </div>
+
+                
+
+                
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact" class="bg-gray-800 text-gray-300 py-10">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-semibold mb-6">Get In Touch</h2>
+            <p class="mb-2">Email: <a href="mailto:nasateja4@gmail.com" class="text-blue-400 hover:underline">nasateja4@gmail.com</a></p>
+            <p class="mb-4">Mobile: <a href="tel:+917569350964" class="text-blue-400 hover:underline">+91 7569350964</a></p>
+            <div class="flex justify-center space-x-4 mb-6">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-white transition duration-300">LinkedIn</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-white transition duration-300">Naukri</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-white transition duration-300">Instagram</a>
+            </div>
+             <p class="text-sm text-gray-500">&copy; <span id="currentYear"></span> Ravi Teja Chevuri. All rights reserved.</p>
+             <p class="text-xs text-gray-600 mt-2">Location: Vizag, Andhra Pradesh, India</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // --- Active Navigation Link Highlighting on Scroll (for index.html) ---
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('header nav a.nav-link'); // Target only main desktop nav links
+
+        const activateNavLink = () => {
+            // Only run scroll-based highlighting on the main page (index.html)
+            if (window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html') || window.location.pathname === '') {
+                let currentSectionId = 'hero'; // Default to hero or about if at top
+                 // Check if scrolled past the top threshold
+                if (pageYOffset > 100) { // Adjust threshold as needed
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.clientHeight;
+                        // Check if section is in viewport (adjust offset as needed for header height)
+                        if (pageYOffset >= sectionTop - sectionHeight / 2 - 80) { // 80px offset for header
+                            currentSectionId = section.getAttribute('id');
+                        }
+                    });
+                } else {
+                    // If near the top, check if #about exists, otherwise default to first link or hero
+                     const aboutSection = document.getElementById('about');
+                     if (aboutSection && pageYOffset < aboutSection.offsetTop - 80) {
+                         currentSectionId = 'about'; // Or keep 'hero' if you prefer nothing active at the very top
+                     }
+                }
+
+
+                navLinks.forEach(link => {
+                    link.classList.remove('nav-active');
+                    // Handle hash links correctly
+                    if (link.getAttribute('href') === `index.html#${currentSectionId}` || link.getAttribute('href') === `#${currentSectionId}`) {
+                         link.classList.add('nav-active');
+                    }
+                });
+            } else {
+                 // On other pages (like project pages), just highlight "Projects"
+                 navLinks.forEach(link => {
+                     link.classList.remove('nav-active');
+                     if (link.getAttribute('href').includes('#projects')) { // Check if the link is for the projects section
+                         link.classList.add('nav-active');
+                     }
+                 });
+            }
+        };
+
+        // Add scroll event listener
+        window.addEventListener('scroll', activateNavLink);
+
+        // Initial call to set active link on page load/refresh
+        document.addEventListener('DOMContentLoaded', activateNavLink);
+        // --- End Active Navigation Link Highlighting ---
+
+
+         // --- Mobile Menu Toggle ---
+         const menuButton = document.getElementById('mobile-menu-button');
+         const mobileMenu = document.getElementById('mobile-menu');
+         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link'); // Links inside mobile menu
+
+         if (menuButton && mobileMenu) {
+             menuButton.addEventListener('click', () => {
+                 mobileMenu.classList.toggle('hidden');
+             });
+
+             // Close mobile menu when a link is clicked
+             mobileNavLinks.forEach(link => {
+                 link.addEventListener('click', () => {
+                     mobileMenu.classList.add('hidden');
+                 });
+             });
+         }
+         // --- End Mobile Menu Toggle ---
+
+    </script>
 
 </body>
 </html>
