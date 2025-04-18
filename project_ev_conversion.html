@@ -94,17 +94,35 @@
     </header>
 
     <main class="container mx-auto px-6 py-12">
+        <!-- Add slideshow at the top -->
+        <div class="mb-10">
+            <div class="relative h-64 md:h-96">
+                <div class="carousel h-full">
+                    <div class="carousel-item h-full">
+                        <img src="./static/EV_car.JPG" alt="EV Conversion Project Image 1"
+                            class="w-full h-full object-contain rounded-lg"
+                            onerror="this.onerror=null; this.src='https://placehold.co/800x400/e2e8f0/64748b?text=Image+Error';">
+                    </div>
+                    <div class="carousel-item h-full">
+                        <img src="./static/EV_car_2.JPG" alt="EV Conversion Project Image 2"
+                            class="w-full h-full object-contain rounded-lg"
+                            onerror="this.onerror=null; this.src='https://placehold.co/800x400/e2e8f0/64748b?text=Image+Error';">
+                    </div>
+                    <div class="carousel-item h-full">
+                        <img src="./static/EV_car_3.JPG" alt="EV Conversion Project Image 3"
+                            class="w-full h-full object-contain rounded-lg"
+                            onerror="this.onerror=null; this.src='https://placehold.co/800x400/e2e8f0/64748b?text=Image+Error';">
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="mb-8">
             <a href="index.html#projects" class="text-blue-600 hover:underline">&larr; Back to Projects</a>
         </div>
 
         <h1 class="text-4xl font-bold mb-6">Electric Vehicle Conversion - Maruti 800</h1>
         <p class="text-lg text-gray-500 mb-8">February - May 2024</p>
-        <div class="mb-10 bg-gray-200 rounded-lg shadow-inner flex items-center justify-center h-64 md:h-96">
-            <img src="./static/EV_car.JPG" alt="EV Conversion Project Image"
-                class="max-h-full max-w-full object-contain rounded-lg"
-                onerror="this.onerror=null; this.src='https://placehold.co/800x400/e2e8f0/64748b?text=Image+Error';">
-        </div>
         <div class="bg-white p-8 rounded-lg shadow-md">
             <h2 class="text-2xl font-semibold mb-4 text-blue-700">Project Overview</h2>
             <p class="text-gray-700 mb-6 leading-relaxed">
@@ -191,13 +209,33 @@
         <div class="bg-white p-8 rounded-lg shadow-md">
             <h2 class="text-2xl font-semibold mb-4 text-blue-700">Project Demo</h2>
             <p class="text-gray-700 mb-6 leading-relaxed">
-                Watch the video below to see the Electric Vehicle Conversion in action.
+                Watch the video below to see the Electric Vehicle Conversion in action, or explore the 3D model of the Maruti 800.
             </p>
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/7_O1lP-1Th8?si=NZfBGNgome2cuAVv"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="relative">
+                <div class="flex justify-center space-x-4 mb-4">
+                    <button id="show-video" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Watch Video</button>
+                    <button id="show-model" class="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">View 3D Model</button>
+                </div>
+                <div class="video-container" id="video-canvas">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/7_O1lP-1Th8?si=NZfBGNgome2cuAVv"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-container hidden" id="model-canvas">
+                    <iframe title="rower chase" frameborder="0" allowfullscreen mozallowfullscreen="true"
+                        webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking"
+                        src="https://sketchfab.com/models/f9d694f2260c42a490f925d8bae35d0e/embed?autostart=1">
+                    </iframe>
+                    <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+                        <a href="https://sketchfab.com/3d-models/rower-chase-f9d694f2260c42a490f925d8bae35d0e?utm_medium=embed&utm_campaign=share-popup&utm_content=f9d694f2260c42a490f925d8bae35d0e"
+                            target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">rower chase</a>
+                        by <a href="https://sketchfab.com/chevuriraviteja?utm_medium=embed&utm_campaign=share-popup&utm_content=f9d694f2260c42a490f925d8bae35d0e"
+                            target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">chevuriraviteja</a>
+                        on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=f9d694f2260c42a490f925d8bae35d0e"
+                            target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+                    </p>
+                </div>
             </div>
         </div>
     </main>
@@ -232,7 +270,46 @@
             menuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
             mobileNavLinks.forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); });
         }
+
+        // Carousel functionality
+        const carousels = document.querySelectorAll('.carousel');
+        carousels.forEach(carousel => {
+            const items = carousel.querySelectorAll('.carousel-item');
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                items.forEach((item, i) => {
+                    item.style.display = i === index ? 'block' : 'none';
+                });
+            }
+
+            // Initialize carousel
+            showSlide(currentIndex);
+
+            // Automatic slide functionality
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % items.length;
+                showSlide(currentIndex);
+            }, 3000); // Change slide every 3 seconds
+        });
+
+        // Toggle between video and 3D model
+        const videoCanvas = document.getElementById('video-canvas');
+        const modelCanvas = document.getElementById('model-canvas');
+        const showVideoButton = document.getElementById('show-video');
+        const showModelButton = document.getElementById('show-model');
+
+        showVideoButton.addEventListener('click', () => {
+            videoCanvas.classList.remove('hidden');
+            modelCanvas.classList.add('hidden');
+        });
+
+        showModelButton.addEventListener('click', () => {
+            modelCanvas.classList.remove('hidden');
+            videoCanvas.classList.add('hidden');
+        });
     </script>
 </body>
 
 </html>
+``` 

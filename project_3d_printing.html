@@ -95,22 +95,7 @@
         /* Swiper Navigation Buttons Styling */
         .swiper-button-next,
         .swiper-button-prev {
-            color: #1d4ed8; /* Blue color for arrows */
-            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
-            border-radius: 50%;
-            width: 40px; /* Adjust size */
-            height: 40px; /* Adjust size */
-            transition: background-color 0.3s ease;
-        }
-        .swiper-button-next:hover,
-        .swiper-button-prev:hover {
-             background-color: rgba(255, 255, 255, 0.9);
-        }
-
-        .swiper-button-next::after,
-        .swiper-button-prev::after {
-            font-size: 18px; /* Adjust arrow size */
-            font-weight: bold;
+            display: none; /* Hide navigation buttons */
         }
 
         /* Swiper Pagination Styling */
@@ -224,66 +209,81 @@
             <hr class="border-gray-200">
 
             <section>
-                 <h3 class="text-xl font-semibold mb-4 text-blue-700">1. Agricultural Based Rover</h3>
-
-                 <div class="side-by-side-container swiper-container rover-swiper"> <div class="swiper-wrapper">
-                         <div class="item-container video-item swiper-slide">
-                             <div class="responsive-iframe-container">
-                                 <iframe
-                                     src="https://www.youtube.com/embed/2D0GofY40FA?si=uu_nDLT5aZ1KM-MI" title="YouTube video player"
-                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                     referrerpolicy="strict-origin-when-cross-origin"
-                                     allowfullscreen></iframe>
-                             </div>
-                             <p class="text-center text-sm text-gray-600 pt-2">Video Demonstration</p>
-                         </div>
-
-                         <div class="item-container sketchfab-item swiper-slide">
-                             <div class="sketchfab-embed-wrapper">
-                                 <iframe
-                                     title="rower chase"
-                                     allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
-                                     allow="autoplay; fullscreen; xr-spatial-tracking"
-                                     xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
-                                     src="https://sketchfab.com/models/f9d694f2260c42a490f925d8bae35d0e/embed?autospin=0&autostart=0&ui_theme=dark&ui_infos=0&ui_inspector=0&ui_watermark=0&ui_annotations=0&ui_help=0&preload=1"> </iframe>
-                                 <p style="font-size: 12px; font-weight: normal; margin: 8px 0 5px 0; color: #4A4A4A; text-align: center;">
-                                     <a href="https://sketchfab.com/3d-models/rower-chase-f9d694f2260c42a490f925d8bae35d0e?utm_medium=embed&utm_campaign=share-popup&utm_content=f9d694f2260c42a490f925d8bae35d0e" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Rower Chase</a> by
-                                     <a href="https://sketchfab.com/chevuriraviteja?utm_medium=embed&utm_campaign=share-popup&utm_content=f9d694f2260c42a490f925d8bae35d0e" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">chevuriraviteja</a> on
-                                     <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=f9d694f2260c42a490f925d8bae35d0e" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
-                                 </p>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="swiper-pagination"></div>
-
-                     <div class="swiper-button-prev"></div>
-                     <div class="swiper-button-next"></div>
-                 </div>
-                 <p class="text-gray-700 mb-4 leading-relaxed pt-4"> I had the opportunity to work with students from K.I.T.E. Engineering College on an interesting project.
-                     They needed a special type of agricultural tool called a rower, which is used for various tasks in
-                     farming. The students came to me with specific ideas and needs for this rower. They told me exactly how
-                     big it should be (its length and width), how much weight it needed to be able to pull, and even the
-                     steepest hills it should be able to climb. My job was to take all of these requirements and design a
-                     rower that could do everything they needed. To do this, I used my knowledge of mechanical engineering
-                     and performed several calculations. These calculations helped me figure out the best materials to use,
-                     the right sizes for different parts, and how to make sure the rower would be strong enough to handle the
-                     loads and climb the inclines. The goal of my design was to create a rower that was not only functional
-                     but also easy to build. By using mechanical calculations, I could ensure that the design would meet all
-                     the students' requirements and be safe and efficient for agricultural work. This project involved
-                     understanding the students' needs, applying engineering principles, and creating a design that could
-                     potentially be manufactured into a real working tool.
-                 </p>
+                <h3 class="text-xl font-semibold mb-4 text-blue-700">1. Agricultural Based Rover</h3>
+                <div class="flex justify-center space-x-4 mb-4">
+                    <button id="view-video-1" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                        Watch Video
+                    </button>
+                    <button id="view-model-1" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                        View 3D Model
+                    </button>
+                </div>
+                <div class="side-by-side-container swiper-container rover-swiper-1">
+                    <div class="swiper-wrapper">
+                        <div class="item-container video-item swiper-slide">
+                            <div class="responsive-iframe-container">
+                                <iframe
+                                    src="https://www.youtube.com/embed/2D0GofY40FA?si=uu_nDLT5aZ1KM-MI" title="YouTube video player"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allowfullscreen></iframe>
+                            </div>
+                            <p class="text-center text-sm text-gray-600 pt-2">Video Demonstration</p>
+                        </div>
+                        <div class="item-container sketchfab-item swiper-slide">
+                            <div class="sketchfab-embed-wrapper">
+                                <p class="text-center text-gray-600">Soon 3D model will add</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <p class="text-gray-700 mb-4 leading-relaxed pt-4"> I had the opportunity to work with students from K.I.T.E. Engineering College on an interesting project.
+                    They needed a special type of agricultural tool called a rower, which is used for various tasks in
+                    farming. The students came to me with specific ideas and needs for this rower. They told me exactly how
+                    big it should be (its length and width), how much weight it needed to be able to pull, and even the
+                    steepest hills it should be able to climb. My job was to take all of these requirements and design a
+                    rower that could do everything they needed. To do this, I used my knowledge of mechanical engineering
+                    and performed several calculations. These calculations helped me figure out the best materials to use,
+                    the right sizes for different parts, and how to make sure the rower would be strong enough to handle the
+                    loads and climb the inclines. The goal of my design was to create a rower that was not only functional
+                    but also easy to build. By using mechanical calculations, I could ensure that the design would meet all
+                    the students' requirements and be safe and efficient for agricultural work. This project involved
+                    understanding the students' needs, applying engineering principles, and creating a design that could
+                    potentially be manufactured into a real working tool.
+                </p>
             </section>
 
             <hr class="border-gray-200">
 
             <section>
                  <h3 class="text-xl font-semibold mb-3 text-blue-700">2. Lathe 3-Jaw Chuck for Laser Engraving Machine</h3>
-                  <div class="video-container">
-                      <iframe src="https://www.youtube.com/embed/S4zS77OUl8o?si=yeXtsQV6hzcDlwuY" title="YouTube video player"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                  </div>
+                 <div class="flex justify-center space-x-4 mb-4">
+                     <button id="view-video-2" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                         Watch Video
+                     </button>
+                     <button id="view-model-2" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                         View 3D Model
+                     </button>
+                 </div>
+                 <div class="side-by-side-container swiper-container rover-swiper-2">
+                     <div class="swiper-wrapper">
+                         <div class="item-container video-item swiper-slide">
+                             <div class="responsive-iframe-container">
+                                 <iframe src="https://www.youtube.com/embed/S4zS77OUl8o?si=yeXtsQV6hzcDlwuY" title="YouTube video player"
+                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                             </div>
+                             <p class="text-center text-sm text-gray-600 pt-2">Video Demonstration</p>
+                         </div>
+                         <div class="item-container sketchfab-item swiper-slide">
+                             <div class="sketchfab-embed-wrapper">
+                                 <p class="text-center text-gray-600">Soon 3D model will add</p>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="swiper-pagination"></div>
+                 </div>
                  <p class="text-gray-700 mb-4 leading-relaxed">
                      The objective of this project was to upgrade my laser engraving machine to enable it to print logos and
                      names on rings. This required a rotating bed to hold the ring securely and rotate it precisely along the
@@ -301,10 +301,31 @@
 
             <section>
                  <h3 class="text-xl font-semibold mb-3 text-blue-700">3. Rotating Bed for Model Display</h3>
-                 <div class="video-container">
-                     <iframe src="https://youtube.com/embed/-SqQ3uOOTR8?si=wM1Ui7LZNWdYgmf1" title="YouTube video player"
-                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                 <div class="flex justify-center space-x-4 mb-4">
+                     <button id="view-video-3" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                         Watch Video
+                     </button>
+                     <button id="view-model-3" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                         View 3D Model
+                     </button>
+                 </div>
+                 <div class="side-by-side-container swiper-container rover-swiper-3">
+                     <div class="swiper-wrapper">
+                         <div class="item-container video-item swiper-slide">
+                             <div class="responsive-iframe-container">
+                                 <iframe src="https://youtube.com/embed/-SqQ3uOOTR8" title="YouTube video player"
+                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                             </div>
+                             <p class="text-center text-sm text-gray-600 pt-2">Video Demonstration</p>
+                         </div>
+                         <div class="item-container sketchfab-item swiper-slide">
+                             <div class="sketchfab-embed-wrapper">
+                                 <p class="text-center text-gray-600">Soon 3D model will add</p>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="swiper-pagination"></div>
                  </div>
                  <p class="text-gray-700 mb-4 leading-relaxed">
                      This project was driven by the need to showcase the 3D models I have designed in a more dynamic way,
@@ -321,10 +342,31 @@
 
             <section>
                  <h3 class="text-xl font-semibold mb-3 text-blue-700">4. Upgrading CNC Laser Engraver Z-Axis for Wood Carving</h3>
-                 <div class="video-container">
-                     <iframe src="https://youtube.com/embed/zGyGgTdxowI?si=ekTqg493JGUY7oMv" title="YouTube video player"
-                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                 <div class="flex justify-center space-x-4 mb-4">
+                     <button id="view-video-4" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                         Watch Video
+                     </button>
+                     <button id="view-model-4" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                         View 3D Model
+                     </button>
+                 </div>
+                 <div class="side-by-side-container swiper-container rover-swiper-4">
+                     <div class="swiper-wrapper">
+                         <div class="item-container video-item swiper-slide">
+                             <div class="responsive-iframe-container">
+                                 <iframe src="https://youtube.com/embed/zGyGgTdxowI" title="YouTube video player"
+                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                             </div>
+                             <p class="text-center text-sm text-gray-600 pt-2">Video Demonstration</p>
+                         </div>
+                         <div class="item-container sketchfab-item swiper-slide">
+                             <div class="sketchfab-embed-wrapper">
+                                 <p class="text-center text-gray-600">Soon 3D model will add</p>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="swiper-pagination"></div>
                  </div>
                  <p class="text-gray-700 mb-4 leading-relaxed">
                      My goal with this project was to expand the functionality of my existing CNC laser engraver to include
@@ -343,10 +385,31 @@
 
             <section>
                  <h3 class="text-xl font-semibold mb-3 text-blue-700">5. Custom Stepper Motors for 6-Axis Robotic Arm</h3>
-                 <div class="video-container">
-                     <iframe src="https://youtube.com/embed/3BYo8GMtsGc" title="YouTube video player"
-                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                 <div class="flex justify-center space-x-4 mb-4">
+                     <button id="view-video-5" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                         Watch Video
+                     </button>
+                     <button id="view-model-5" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                         View 3D Model
+                     </button>
+                 </div>
+                 <div class="side-by-side-container swiper-container rover-swiper-5">
+                     <div class="swiper-wrapper">
+                         <div class="item-container video-item swiper-slide">
+                             <div class="responsive-iframe-container">
+                                 <iframe src="https://youtube.com/embed/3BYo8GMtsGc" title="YouTube video player"
+                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                             </div>
+                             <p class="text-center text-sm text-gray-600 pt-2">Video Demonstration</p>
+                         </div>
+                         <div class="item-container sketchfab-item swiper-slide">
+                             <div class="sketchfab-embed-wrapper">
+                                 <p class="text-center text-gray-600">Soon 3D model will add</p>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="swiper-pagination"></div>
                  </div>
                  <p class="text-gray-700 mb-6 leading-relaxed">
                      As part of a larger project to design a 6-axis robotic arm, I encountered a challenge related to the
@@ -429,39 +492,76 @@
         }
 
         // Initialize Swiper for the Rover section
-        const roverSwiper = new Swiper('.rover-swiper', {
-            // Optional parameters
-            loop: true, // Enable continuous loop mode
-            grabCursor: true, // Show grab cursor on hover
-
-            // Pagination
+        const roverSwiper1 = new Swiper('.rover-swiper-1', {
+            loop: false, // Disable loop
+            grabCursor: true,
             pagination: {
                 el: '.swiper-pagination',
-                clickable: true, // Allow clicking on pagination bullets
+                clickable: true,
             },
-
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-
-             // Accessibility features
-             a11y: {
-                 prevSlideMessage: 'Previous slide',
-                 nextSlideMessage: 'Next slide',
-             },
+            navigation: false, // Disable navigation arrows
         });
 
-        // --- IMPORTANT ---
-        // Replace placeholder YouTube URLs with your actual video IDs/URLs
-        // Example: Replace 'VIDEO_ID_2' in the src attribute of the iframes like:
-        // src="https://www.youtube.com/embed/YOUR_ACTUAL_VIDEO_ID_HERE"
-        // Do this for all video placeholders (VIDEO_ID_2, VIDEO_ID_3, etc.)
+        const roverSwiper2 = new Swiper('.rover-swiper-2', {
+            loop: false,
+            pagination: { el: '.swiper-pagination', clickable: true },
+        });
 
-        // Also, replace the placeholder URL in the rover swiper if needed.
-        // The current placeholder is: https://www.youtube.com/embed/dQw4w9WgXcQ
+        const roverSwiper3 = new Swiper('.rover-swiper-3', {
+            loop: false,
+            pagination: { el: '.swiper-pagination', clickable: true },
+        });
 
+        const roverSwiper4 = new Swiper('.rover-swiper-4', {
+            loop: false,
+            pagination: { el: '.swiper-pagination', clickable: true },
+        });
+
+        const roverSwiper5 = new Swiper('.rover-swiper-5', {
+            loop: false,
+            pagination: { el: '.swiper-pagination', clickable: true },
+        });
+
+        // Add event listeners for buttons
+        document.getElementById('view-video-1').addEventListener('click', () => {
+            roverSwiper1.slideTo(0); // Navigate to the first slide (video)
+        });
+
+        document.getElementById('view-model-1').addEventListener('click', () => {
+            roverSwiper1.slideTo(1); // Navigate to the second slide (3D model)
+        });
+
+        document.getElementById('view-video-2').addEventListener('click', () => {
+            roverSwiper2.slideTo(0);
+        });
+
+        document.getElementById('view-model-2').addEventListener('click', () => {
+            roverSwiper2.slideTo(1);
+        });
+
+        document.getElementById('view-video-3').addEventListener('click', () => {
+            roverSwiper3.slideTo(0);
+        });
+
+        document.getElementById('view-model-3').addEventListener('click', () => {
+            roverSwiper3.slideTo(1);
+        });
+
+        document.getElementById('view-video-4').addEventListener('click', () => {
+            roverSwiper4.slideTo(0);
+        });
+
+        document.getElementById('view-model-4').addEventListener('click', () => {
+            roverSwiper4.slideTo(1);
+        });
+
+        document.getElementById('view-video-5').addEventListener('click', () => {
+            roverSwiper5.slideTo(0);
+        });
+
+        document.getElementById('view-model-5').addEventListener('click', () => {
+            roverSwiper5.slideTo(1);
+        });
     </script>
 </body>
 
