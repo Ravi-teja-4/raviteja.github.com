@@ -31,38 +31,29 @@
 
         /* --- START: Swiper Integration CSS --- */
 
-        /* Container for the swiper items */
-        /* Remove flex properties, Swiper handles layout */
-        .side-by-side-container.swiper-container {
-            /* display: flex; */ /* REMOVED */
-            /* flex-wrap: wrap; */ /* REMOVED */
-            /* gap: 20px; */ /* REMOVED - Swiper handles spacing */
-            /* align-items: flex-start; */ /* REMOVED */
-            margin-bottom: 1rem; /* Keep margin */
-            overflow: hidden; /* Important for Swiper */
-            position: relative; /* Needed for absolute positioned nav buttons */
-            border-radius: 0.375rem; /* Optional: round the swiper container */
-            background-color: #e2e8f0; /* Optional: background for the container */
-            padding-bottom: 40px; /* Add space for pagination */
+        .swiper-container {
+            margin-bottom: 1rem;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 40px;
+        }
+        
+        .hero-swiper {
+             padding-bottom: 40px; /* Ensure hero swiper also has space for pagination */
         }
 
-        /* Style for each item (video and model container) inside Swiper */
         .item-container.swiper-slide {
-             /* flex: 1; */ /* REMOVED - Swiper manages width */
-             /* min-width: 280px; */ /* REMOVED */
-             width: 100%; /* Let Swiper control the width */
-             box-sizing: border-box; /* Include padding/border in width calculation */
+             width: 100%;
+             box-sizing: border-box;
         }
 
-        /* Generic Responsive iframe container (used for video) */
         .responsive-iframe-container {
             position: relative;
             padding-bottom: 56.25%; /* 16:9 aspect ratio */
             height: 0;
             overflow: hidden;
             max-width: 100%;
-            background: #e2e8f0; /* Lighter background */
-            /* border-radius: 0.375rem; */ /* Removed - rounding applied to container or slide */
+            background: #e2e8f0;
         }
 
         .responsive-iframe-container iframe {
@@ -71,34 +62,27 @@
             left: 0;
             width: 100%;
             height: 100%;
-            border: 0; /* Remove iframe border */
+            border: 0;
         }
 
-        /* Sketchfab Specific Styling */
         .sketchfab-embed-wrapper iframe {
             display: block;
             width: 100%;
-            height: 315px; /* Default height, adjust if needed */
-            /* Consider aspect-ratio for consistency */
             aspect-ratio: 16 / 9;
             height: auto;
             border: 0;
-            /* border-radius: 0.375rem; */ /* Removed - rounding applied to container or slide */
         }
 
          .sketchfab-embed-wrapper p {
-            /* Styles are inline, but ensure margin is appropriate */
             margin-top: 5px;
-            padding: 0 10px; /* Add some padding if needed */
+            padding: 0 10px;
          }
 
-        /* Swiper Navigation Buttons Styling */
         .swiper-button-next,
         .swiper-button-prev {
             display: none; /* Hide navigation buttons */
         }
 
-        /* Swiper Pagination Styling */
         .swiper-pagination-bullet {
             background-color: #64748b; /* Gray color for inactive bullets */
             opacity: 0.8;
@@ -109,34 +93,7 @@
             background-color: #1d4ed8; /* Blue color for active bullet */
             opacity: 1;
         }
-
-        /* Remove the media query that stacks these specific items */
-        /* Swiper handles responsiveness */
-        /* @media (max-width: 768px) { ... } */
-
         /* --- END: Swiper Integration CSS --- */
-
-
-        /* Keep original video container styles for other videos if needed */
-         .video-container {
-             position: relative;
-             padding-bottom: 56.25%; /* 16:9 */
-             height: 0;
-             overflow: hidden;
-             max-width: 100%;
-             background: #e2e8f0;
-             border-radius: 0.5rem; /* Tailwind lg rounded */
-             margin-bottom: 1rem; /* Add space below videos */
-         }
-
-         .video-container iframe {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              border: 0;
-          }
 
     </style>
 </head>
@@ -185,31 +142,105 @@
             <a href="index.html#projects" class="text-blue-600 hover:underline">← Back to Projects</a>
         </div>
         <h1 class="text-4xl font-bold mb-6 text-gray-900">3D Modeling & 3D Printing Projects</h1>
-        <div class="mb-10 bg-gray-200 rounded-lg shadow-inner flex items-center justify-center h-64 md:h-96 overflow-hidden">
-             <img src="./static/3dModel.jpeg" alt="3D Printing Project Image"
-                  class="object-contain h-full w-full"
-                  onerror="this.onerror=null; this.src='https://placehold.co/800x400/e2e8f0/64748b?text=Image+Not+Found'; this.classList.add('p-4');">
+        
+        <div class="hero-swiper swiper-container mb-10 rounded-lg shadow-inner h-64 md:h-96 overflow-hidden">
+             <div class="swiper-wrapper">
+                 <div class="swiper-slide bg-gray-200 flex items-center justify-center">
+                     <img src="./static/3dModel.jpeg" alt="3D Printing Project Image"
+                          class="object-contain h-full w-full"
+                          onerror="this.onerror=null; this.src='https://placehold.co/800x400/e2e8f0/64748b?text=Image+Not+Found';">
+                 </div>
+                 <div class="swiper-slide bg-gray-200 flex items-center justify-center">
+                     <img src="./static/watch.jpeg" alt="Agricultural Rover Model"
+                          class="object-contain h-full w-full">
+                 </div>
+                 <div class="swiper-slide bg-gray-200 flex items-center justify-center">
+                     <img src="./static/watch_explore.jpeg" alt="CNC Z-Axis Upgrade"
+                          class="object-contain h-full w-full">
+                 </div>
+                 <div class="swiper-slide bg-gray-200 flex items-center justify-center">
+                     <img src="./static/IMG_3625.JPG" alt="CNC Z-Axis Upgrade"
+                          class="object-contain h-full w-full">
+                 </div>
+             </div>
+             <div class="swiper-pagination"></div>
         </div>
+
 
         <div class="bg-white p-6 md:p-8 rounded-lg shadow-md space-y-8">
             <section>
                  <h2 class="text-2xl font-semibold mb-4 text-blue-700">Project Overview</h2>
                  <p class="text-gray-700 mb-6 leading-relaxed">
-                     This section showcases a collection of 3D printing projects I have undertaken to solve practical
-                     problems and explore the capabilities of additive manufacturing. These projects range from creating
-                     custom accessories for existing machinery to designing components for new systems. The primary
-                     motivation behind these projects is to find cost-effective and tailored solutions that meet specific
-                     requirements. I have utilized various 3D printers, including FDM (Fused Deposition Modeling) technology,
-                     and experimented with different materials like PLA and ABS to achieve the desired functionality and
-                     durability. The design process typically involves CAD software such as SolidWorks and Fusion 360,
-                     followed by slicing and printing using software like Cura or PrusaSlicer.
+                      This section showcases a collection of 3D printing projects I have undertaken to solve practical
+                      problems and explore the capabilities of additive manufacturing. These projects range from creating
+                      custom accessories for existing machinery to designing components for new systems. The primary
+                      motivation behind these projects is to find cost-effective and tailored solutions that meet specific
+                      requirements. I have utilized various 3D printers, including FDM (Fused Deposition Modeling) technology,
+                      and experimented with different materials like PLA and ABS to achieve the desired functionality and
+                      durability. The design process typically involves CAD software such as SolidWorks and Fusion 360,
+                      followed by slicing and printing using software like Cura or PrusaSlicer.
                  </p>
             </section>
 
             <hr class="border-gray-200">
 
             <section>
-                 <h3 class="text-xl font-semibold mb-4 text-blue-700">1. Agricultural Based Rover</h3>
+                 <h3 class="text-xl font-semibold mb-4 text-blue-700">1.Smart Health Tracking Watch (Ongoing Project)</h3>
+                <div class="flex justify-center space-x-4 mb-4">
+                    <button id="view-video-1" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                        Watch Video
+                    </button>
+                    <button id="view-model-1" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                        View 3D Model
+                    </button>
+                </div>
+                <div class="side-by-side-container swiper-container rover-swiper-1">
+                    <div class="swiper-wrapper">
+                        <div class="item-container video-item swiper-slide">
+                            <div class="responsive-iframe-container">
+                                <iframe
+                                    src="https://www.youtube.com/embed/2D0GofY40FA?si=uu_nDLT5aZ1KM-MI" title="YouTube video player"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allowfullscreen></iframe>
+                            </div>
+                            <p class="text-center text-sm text-gray-600 pt-2">Video Demonstration</p>
+                        </div>
+                        <div class="item-container sketchfab-item swiper-slide">
+                            <div class="sketchfab-embed-wrapper">
+                                <iframe title="Rower" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/fd99e5beff4b4b15a7503bdb507d2df2/embed?autospin=1&autostart=1"></iframe>
+                                <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+                                    <a href="https://sketchfab.com/3d-models/rower-fd99e5beff4b4b15a7503bdb507d2df2?utm_medium=embed&utm_campaign=share-popup&utm_content=fd99e5beff4b4b15a7503bdb507d2df2" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Rower</a> by 
+                                    <a href="https://sketchfab.com/nasateja4?utm_medium=embed&utm_campaign=share-popup&utm_content=fd99e5beff4b4b15a7503bdb507d2df2" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">nasateja4</a> on 
+                                    <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=fd99e5beff4b4b15a7503bdb507d2df2" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item-container sketchfab-item swiper-slide">
+                            <div class="sketchfab-embed-wrapper">
+                                <iframe title="rower chase" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/f9d694f2260c42a490f925d8bae35d0e/embed?autospin=1&autostart=1"></iframe>
+                                <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+                                    <a href="https://sketchfab.com/3d-models/rower-chase-f9d694f2260c42a490f925d8bae35d0e?utm_medium=embed&utm_campaign=share-popup&utm_content=f9d694f2260c42a490f925d8bae35d0e" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">rower chase</a> by 
+                                    <a href="https://sketchfab.com/chevuriraviteja?utm_medium=embed&utm_campaign=share-popup&utm_content=f9d694f2260c42a490f925d8bae35d0e" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">chevuriraviteja</a> on 
+                                    <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=f9d694f2260c42a490f925d8bae35d0e" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <p class="text-gray-700 mb-4 leading-relaxed pt-4"> Currently developing a smart health tracking watch – hardware completed, working on coding and custom mobile app.
+                    This project involves building a wearable smart health tracking watch using the ESP32-S3. The design and hardware connections have been completed, integrating sensors
+                    like the MAX30102 (heart rate & SpO₂), MPU6050 (motion/activity), rechargeable battery with TP4056 charging module, and a haptic vibration motor. At present, I am working 
+                    on the embedded coding and development of a customized mobile application for real-time data monitoring and user interaction. This project demonstrates my skills in
+                    hardware design, sensor integration, circuit optimization, and IoT-based health technology development.
+                </p>
+            </section>
+
+            <hr class="border-gray-200">
+
+            <section>
+                 <h3 class="text-xl font-semibold mb-4 text-blue-700">2. Agricultural Based Rover</h3>
                 <div class="flex justify-center space-x-4 mb-4">
                     <button id="view-video-1" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
                         Watch Video
@@ -269,199 +300,201 @@
                 </p>
             </section>
 
+
+            
             <hr class="border-gray-200">
 
             <section>
-                 <h3 class="text-xl font-semibold mb-3 text-blue-700">2. Lathe 3-Jaw Chuck for Laser Engraving Machine</h3>
+                 <h3 class="text-xl font-semibold mb-3 text-blue-700">3. Lathe 3-Jaw Chuck for Laser Engraving Machine</h3>
                  <div class="flex justify-center space-x-4 mb-4">
-                     <button id="view-video-2" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                         Watch Video
-                     </button>
-                     <button id="view-model-2" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                         View 3D Model
-                     </button>
+                      <button id="view-video-2" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                          Watch Video
+                      </button>
+                      <button id="view-model-2" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                          View 3D Model
+                      </button>
                  </div>
                  <div class="side-by-side-container swiper-container rover-swiper-2">
-                     <div class="swiper-wrapper">
-                         <div class="item-container video-item swiper-slide">
-                             <div class="responsive-iframe-container">
-                                 <iframe src="https://www.youtube.com/embed/S4zS77OUl8o?si=yeXtsQV6hzcDlwuY" title="YouTube video player"
-                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                             </div>
-                             <p class="text-center text-sm text-gray-600 pt-2">Video Demonstration</p>
-                         </div>
-                         <div class="item-container sketchfab-item swiper-slide">
-                             <div class="sketchfab-embed-wrapper">
-                                 <p class="text-center text-gray-600">Soon 3D model will add</p>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="swiper-pagination"></div>
+                      <div class="swiper-wrapper">
+                           <div class="item-container video-item swiper-slide">
+                                <div class="responsive-iframe-container">
+                                     <iframe src="https://www.youtube.com/embed/S4zS77OUl8o?si=yeXtsQV6hzcDlwuY" title="YouTube video player"
+                                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                                <p class="text-center text-sm text-gray-600 pt-2">Video Demonstration</p>
+                           </div>
+                           <div class="item-container sketchfab-item swiper-slide">
+                                <div class="sketchfab-embed-wrapper">
+                                     <p class="text-center text-gray-600">Soon 3D model will add</p>
+                                </div>
+                           </div>
+                      </div>
+                      <div class="swiper-pagination"></div>
                  </div>
                  <p class="text-gray-700 mb-4 leading-relaxed">
-                     The objective of this project was to upgrade my laser engraving machine to enable it to print logos and
-                     names on rings. This required a rotating bed to hold the ring securely and rotate it precisely along the
-                     X-axis during the engraving process. Commercially available small chucks suitable for this purpose were
-                     priced between ₹2,000 to ₹3,000, which I found to be expensive. To overcome this, I designed and 3D
-                     printed my own 3-jaw chuck. The design was created using Fusion 360,
-                     keeping in mind the dimensions required to hold various ring sizes and the mounting mechanism for the
-                     laser engraver. The chuck was printed using PLA for its rigidity and ease
-                     of printing. After printing, the chuck was tested for its holding capability and rotational accuracy,
-                     successfully enabling ring engraving.
+                      The objective of this project was to upgrade my laser engraving machine to enable it to print logos and
+                      names on rings. This required a rotating bed to hold the ring securely and rotate it precisely along the
+                      X-axis during the engraving process. Commercially available small chucks suitable for this purpose were
+                      priced between ₹2,000 to ₹3,000, which I found to be expensive. To overcome this, I designed and 3D
+                      printed my own 3-jaw chuck. The design was created using Fusion 360,
+                      keeping in mind the dimensions required to hold various ring sizes and the mounting mechanism for the
+                      laser engraver. The chuck was printed using PLA for its rigidity and ease
+                      of printing. After printing, the chuck was tested for its holding capability and rotational accuracy,
+                      successfully enabling ring engraving.
                  </p>
             </section>
 
              <hr class="border-gray-200">
 
             <section>
-                 <h3 class="text-xl font-semibold mb-3 text-blue-700">3. Rotating Bed for Model Display</h3>
+                 <h3 class="text-xl font-semibold mb-3 text-blue-700">4. Rotating Bed for Model Display</h3>
                  <div class="flex justify-center space-x-4 mb-4">
-                     <button id="view-video-3" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                         Watch Video
-                     </button>
-                     <button id="view-model-3" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                         View 3D Model
-                     </button>
+                      <button id="view-video-3" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                          Watch Video
+                      </button>
+                      <button id="view-model-3" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                          View 3D Model
+                      </button>
                  </div>
                  <div class="side-by-side-container swiper-container rover-swiper-3">
-                     <div class="swiper-wrapper">
-                         <div class="item-container video-item swiper-slide">
-                             <div class="responsive-iframe-container">
-                                 <iframe src="https://youtube.com/embed/-SqQ3uOOTR8" title="YouTube video player"
-                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                             </div>
-                             <p class="text-center text-sm text-gray-600 pt-2">Video Demonstration</p>
-                         </div>
-                         <div class="item-container sketchfab-item swiper-slide">
-                             <div class="sketchfab-embed-wrapper">
-                                <div class="sketchfab-embed-wrapper"> <iframe title="3D Printed rotating box" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/f9a45683183e4bc3a382eedf9c332771/embed?autospin=1&autostart=1"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/3d-printed-rotating-box-f9a45683183e4bc3a382eedf9c332771?utm_medium=embed&utm_campaign=share-popup&utm_content=f9a45683183e4bc3a382eedf9c332771" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> 3D Printed rotating box </a> by <a href="https://sketchfab.com/nasateja4?utm_medium=embed&utm_campaign=share-popup&utm_content=f9a45683183e4bc3a382eedf9c332771" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> nasateja4 </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=f9a45683183e4bc3a382eedf9c332771" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="swiper-pagination"></div>
+                      <div class="swiper-wrapper">
+                           <div class="item-container video-item swiper-slide">
+                                <div class="responsive-iframe-container">
+                                     <iframe src="https://youtube.com/embed/-SqQ3uOOTR8" title="YouTube video player"
+                                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                                <p class="text-center text-sm text-gray-600 pt-2">Video Demonstration</p>
+                           </div>
+                           <div class="item-container sketchfab-item swiper-slide">
+                                <div class="sketchfab-embed-wrapper">
+                                    <div class="sketchfab-embed-wrapper"> <iframe title="3D Printed rotating box" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/f9a45683183e4bc3a382eedf9c332771/embed?autospin=1&autostart=1"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/3d-printed-rotating-box-f9a45683183e4bc3a382eedf9c332771?utm_medium=embed&utm_campaign=share-popup&utm_content=f9a45683183e4bc3a382eedf9c332771" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> 3D Printed rotating box </a> by <a href="https://sketchfab.com/nasateja4?utm_medium=embed&utm_campaign=share-popup&utm_content=f9a45683183e4bc3a382eedf9c332771" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> nasateja4 </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=f9a45683183e4bc3a382eedf9c332771" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+                                </div>
+                           </div>
+                      </div>
+                      <div class="swiper-pagination"></div>
                  </div>
                  <p class="text-gray-700 mb-4 leading-relaxed">
-                     This project was driven by the need to showcase the 3D models I have designed in a more dynamic way,
-                     specifically while recording videos. I wanted a simple yet effective rotating platform that could
-                     smoothly turn the models, providing a 360-degree view for better presentation. I designed a rotating bed
-                     with a circular platform using Fusion 360. The design focused on
-                     simplicity and ease of printing. It consists of a base and a rotating top, possibly with provisions for
-                     a small motor in future iterations for automated rotation. Printed using PLA,
-                     this rotating bed has proven useful in creating engaging videos of my 3D printed creations.
+                      This project was driven by the need to showcase the 3D models I have designed in a more dynamic way,
+                      specifically while recording videos. I wanted a simple yet effective rotating platform that could
+                      smoothly turn the models, providing a 360-degree view for better presentation. I designed a rotating bed
+                      with a circular platform using Fusion 360. The design focused on
+                      simplicity and ease of printing. It consists of a base and a rotating top, possibly with provisions for
+                      a small motor in future iterations for automated rotation. Printed using PLA,
+                      this rotating bed has proven useful in creating engaging videos of my 3D printed creations.
                  </p>
             </section>
 
              <hr class="border-gray-200">
 
             <section>
-                 <h3 class="text-xl font-semibold mb-3 text-blue-700">4. Upgrading CNC Laser Engraver Z-Axis for Wood Carving</h3>
+                 <h3 class="text-xl font-semibold mb-3 text-blue-700">5. Upgrading CNC Laser Engraver Z-Axis for Wood Carving</h3>
                  <div class="flex justify-center space-x-4 mb-4">
-                     <button id="view-video-4" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                         Watch Video
-                     </button>
-                     <button id="view-model-4" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                         View 3D Model
-                     </button>
+                      <button id="view-video-4" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                          Watch Video
+                      </button>
+                      <button id="view-model-4" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                          View 3D Model
+                      </button>
                  </div>
                  <div class="side-by-side-container swiper-container rover-swiper-4">
-                     <div class="swiper-wrapper">
-                         <div class="item-container video-item swiper-slide">
-                             <div class="responsive-iframe-container">
-                                 <iframe src="https://youtube.com/embed/zGyGgTdxowI" title="YouTube video player"
-                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                             </div>
-                             <p class="text-center text-sm text-gray-600 pt-2">Video Demonstration</p>
-                         </div>
-                         <div class="item-container sketchfab-item swiper-slide">
-                             <div class="sketchfab-embed-wrapper">
-                                <div class="sketchfab-embed-wrapper"> <iframe title="cnc" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/ce1bf2b9e3c340c9a85c28e2003a8a75/embed?autospin=1&autostart=1"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/cnc-ce1bf2b9e3c340c9a85c28e2003a8a75?utm_medium=embed&utm_campaign=share-popup&utm_content=ce1bf2b9e3c340c9a85c28e2003a8a75" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> cnc </a> by <a href="https://sketchfab.com/nasateja4?utm_medium=embed&utm_campaign=share-popup&utm_content=ce1bf2b9e3c340c9a85c28e2003a8a75" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> nasateja4 </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=ce1bf2b9e3c340c9a85c28e2003a8a75" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="swiper-pagination"></div>
+                      <div class="swiper-wrapper">
+                           <div class="item-container video-item swiper-slide">
+                                <div class="responsive-iframe-container">
+                                     <iframe src="https://youtube.com/embed/zGyGgTdxowI" title="YouTube video player"
+                                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                                <p class="text-center text-sm text-gray-600 pt-2">Video Demonstration</p>
+                           </div>
+                           <div class="item-container sketchfab-item swiper-slide">
+                                <div class="sketchfab-embed-wrapper">
+                                    <div class="sketchfab-embed-wrapper"> <iframe title="cnc" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/ce1bf2b9e3c340c9a85c28e2003a8a75/embed?autospin=1&autostart=1"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/cnc-ce1bf2b9e3c340c9a85c28e2003a8a75?utm_medium=embed&utm_campaign=share-popup&utm_content=ce1bf2b9e3c340c9a85c28e2003a8a75" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> cnc </a> by <a href="https://sketchfab.com/nasateja4?utm_medium=embed&utm_campaign=share-popup&utm_content=ce1bf2b9e3c340c9a85c28e2003a8a75" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> nasateja4 </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=ce1bf2b9e3c340c9a85c28e2003a8a75" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+                                </div>
+                           </div>
+                      </div>
+                      <div class="swiper-pagination"></div>
                  </div>
                  <p class="text-gray-700 mb-4 leading-relaxed">
-                     My goal with this project was to expand the functionality of my existing CNC laser engraver to include
-                     wood carving and milling capabilities, specifically targeting the ability to engrave wood and aluminum
-                     with a controlled depth of 1mm per pass. To achieve this, the primary requirement was an upgrade to the
-                     Z-axis of the machine. I designed a new Z-axis assembly using Fusion 360
-                     that could accommodate a spindle motor suitable for milling. The design focused on rigidity and
-                     precision to ensure accurate and consistent cutting depth. Considerations included the mounting
-                     mechanism for the spindle, the travel distance of the Z-axis, and the overall stability of the machine.
-                     The planned implementation involves using a [Specify Spindle Type] spindle motor and appropriate end
-                     mills to achieve the desired 1mm depth per pass in wood and aluminum.
+                      My goal with this project was to expand the functionality of my existing CNC laser engraver to include
+                      wood carving and milling capabilities, specifically targeting the ability to engrave wood and aluminum
+                      with a controlled depth of 1mm per pass. To achieve this, the primary requirement was an upgrade to the
+                      Z-axis of the machine. I designed a new Z-axis assembly using Fusion 360
+                      that could accommodate a spindle motor suitable for milling. The design focused on rigidity and
+                      precision to ensure accurate and consistent cutting depth. Considerations included the mounting
+                      mechanism for the spindle, the travel distance of the Z-axis, and the overall stability of the machine.
+                      The planned implementation involves using a [Specify Spindle Type] spindle motor and appropriate end
+                      mills to achieve the desired 1mm depth per pass in wood and aluminum.
                  </p>
             </section>
 
              <hr class="border-gray-200">
 
             <section>
-                 <h3 class="text-xl font-semibold mb-3 text-blue-700">5. Custom Stepper Motors for 6-Axis Robotic Arm</h3>
+                 <h3 class="text-xl font-semibold mb-3 text-blue-700">6. Custom Stepper Motors for 6-Axis Robotic Arm</h3>
                  <div class="flex justify-center space-x-4 mb-4">
-                     <button id="view-video-5" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                         Watch Video
-                     </button>
-                     <button id="view-model-5" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                         View 3D Model
-                     </button>
+                      <button id="view-video-5" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                          Watch Video
+                      </button>
+                      <button id="view-model-5" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                          View 3D Model
+                      </button>
                  </div>
                  <div class="side-by-side-container swiper-container rover-swiper-5">
-                     <div class="swiper-wrapper">
-                         <div class="item-container video-item swiper-slide">
-                             <div class="responsive-iframe-container">
-                                 <iframe src="https://youtube.com/embed/3BYo8GMtsGc" title="YouTube video player"
-                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                             </div>
-                             <p class="text-center text-sm text-gray-600 pt-2">Video Demonstration</p>
-                         </div>
-                         <div class="item-container sketchfab-item swiper-slide">
-                             <div class="sketchfab-embed-wrapper">
-                                <iframe title="stepper motor v7" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/099d6834458b4f1487ff29ad16225d22/embed?autospin=1&autostart=1"></iframe>
-                                <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
-                                    <a href="https://sketchfab.com/3d-models/stepper-motor-v7-099d6834458b4f1487ff29ad16225d22?utm_medium=embed&utm_campaign=share-popup&utm_content=099d6834458b4f1487ff29ad16225d22" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">stepper motor v7</a> by 
-                                    <a href="https://sketchfab.com/nasateja4?utm_medium=embed&utm_campaign=share-popup&utm_content=099d6834458b4f1487ff29ad16225d22" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">nasateja4</a> on 
-                                    <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=099d6834458b4f1487ff29ad16225d22" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
-                                </p>
-                             </div>
-                         </div>
-                         <div class="item-container sketchfab-item swiper-slide">
-                             <div class="sketchfab-embed-wrapper">
-                                <iframe title="cylindrical stepper motor v1" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/bc19dc85c3f74694924033dab609fb1a/embed?autospin=1&autostart=1"></iframe>
-                                <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
-                                    <a href="https://sketchfab.com/3d-models/cylindrical-stepper-motor-v1-bc19dc85c3f74694924033dab609fb1a?utm_medium=embed&utm_campaign=share-popup&utm_content=bc19dc85c3f74694924033dab609fb1a" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">cylindrical stepper motor v1</a> by 
-                                    <a href="https://sketchfab.com/nasateja4?utm_medium=embed&utm_campaign=share-popup&utm_content=bc19dc85c3f74694924033dab609fb1a" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">nasateja4</a> on 
-                                    <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=bc19dc85c3f74694924033dab609fb1a" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
-                                </p>
-                             </div>
-                         </div>
-                         <div class="item-container sketchfab-item swiper-slide">
-                             <div class="sketchfab-embed-wrapper">
-                                 <iframe title="nema 21 stepper motor v1" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/61e9fc0271ed49e6af784659e9026f69/embed?autospin=1&autostart=1"></iframe>
-                                 <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
-                                     <a href="https://sketchfab.com/3d-models/nema-21-stepper-motor-v1-61e9fc0271ed49e6af784659e9026f69?utm_medium=embed&utm_campaign=share-popup&utm_content=61e9fc0271ed49e6af784659e9026f69" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">nema 21 stepper motor v1</a> by 
-                                     <a href="https://sketchfab.com/nasateja4?utm_medium=embed&utm_campaign=share-popup&utm_content=61e9fc0271ed49e6af784659e9026f69" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">nasateja4</a> on 
-                                     <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=61e9fc0271ed49e6af784659e9026f69" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
-                                 </p>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="swiper-pagination"></div>
+                      <div class="swiper-wrapper">
+                           <div class="item-container video-item swiper-slide">
+                                <div class="responsive-iframe-container">
+                                     <iframe src="https://youtube.com/embed/3BYo8GMtsGc" title="YouTube video player"
+                                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                                <p class="text-center text-sm text-gray-600 pt-2">Video Demonstration</p>
+                           </div>
+                           <div class="item-container sketchfab-item swiper-slide">
+                                <div class="sketchfab-embed-wrapper">
+                                     <iframe title="stepper motor v7" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/099d6834458b4f1487ff29ad16225d22/embed?autospin=1&autostart=1"></iframe>
+                                     <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+                                          <a href="https://sketchfab.com/3d-models/stepper-motor-v7-099d6834458b4f1487ff29ad16225d22?utm_medium=embed&utm_campaign=share-popup&utm_content=099d6834458b4f1487ff29ad16225d22" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">stepper motor v7</a> by 
+                                          <a href="https://sketchfab.com/nasateja4?utm_medium=embed&utm_campaign=share-popup&utm_content=099d6834458b4f1487ff29ad16225d22" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">nasateja4</a> on 
+                                          <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=099d6834458b4f1487ff29ad16225d22" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+                                     </p>
+                                </div>
+                           </div>
+                           <div class="item-container sketchfab-item swiper-slide">
+                                <div class="sketchfab-embed-wrapper">
+                                     <iframe title="cylindrical stepper motor v1" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/bc19dc85c3f74694924033dab609fb1a/embed?autospin=1&autostart=1"></iframe>
+                                     <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+                                          <a href="https://sketchfab.com/3d-models/cylindrical-stepper-motor-v1-bc19dc85c3f74694924033dab609fb1a?utm_medium=embed&utm_campaign=share-popup&utm_content=bc19dc85c3f74694924033dab609fb1a" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">cylindrical stepper motor v1</a> by 
+                                          <a href="https://sketchfab.com/nasateja4?utm_medium=embed&utm_campaign=share-popup&utm_content=bc19dc85c3f74694924033dab609fb1a" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">nasateja4</a> on 
+                                          <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=bc19dc85c3f74694924033dab609fb1a" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+                                     </p>
+                                </div>
+                           </div>
+                           <div class="item-container sketchfab-item swiper-slide">
+                                <div class="sketchfab-embed-wrapper">
+                                     <iframe title="nema 21 stepper motor v1" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/61e9fc0271ed49e6af784659e9026f69/embed?autospin=1&autostart=1"></iframe>
+                                     <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+                                          <a href="https://sketchfab.com/3d-models/nema-21-stepper-motor-v1-61e9fc0271ed49e6af784659e9026f69?utm_medium=embed&utm_campaign=share-popup&utm_content=61e9fc0271ed49e6af784659e9026f69" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">nema 21 stepper motor v1</a> by 
+                                          <a href="https://sketchfab.com/nasateja4?utm_medium=embed&utm_campaign=share-popup&utm_content=61e9fc0271ed49e6af784659e9026f69" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">nasateja4</a> on 
+                                          <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=61e9fc0271ed49e6af784659e9026f69" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+                                     </p>
+                                </div>
+                           </div>
+                      </div>
+                      <div class="swiper-pagination"></div>
                  </div>
                  <p class="text-gray-700 mb-6 leading-relaxed">
-                     As part of a larger project to design a 6-axis robotic arm, I encountered a challenge related to the
-                     fitting of stepper motors at specific joints. The available off-the-shelf stepper motors did not
-                     perfectly match the dimensional requirements of the robotic arm design, particularly the alignment of
-                     the mounting holes for nuts and bolts. To address this, I decided to design custom stepper motor
-                     housings using SolidWorks. The design process involved carefully
-                     measuring the required dimensions and ensuring that the mounting holes would precisely align with the
-                     corresponding points on the robotic arm structure. While the internal components of the stepper motors
-                     would likely be standard, the custom-designed housings would guarantee a perfect fit, which is crucial
-                     for the structural integrity and functionality of the robotic arm. This project highlights the ability
-                     of 3D printing to create custom mechanical components tailored to specific design needs.
+                      As part of a larger project to design a 6-axis robotic arm, I encountered a challenge related to the
+                      fitting of stepper motors at specific joints. The available off-the-shelf stepper motors did not
+                      perfectly match the dimensional requirements of the robotic arm design, particularly the alignment of
+                      the mounting holes for nuts and bolts. To address this, I decided to design custom stepper motor
+                      housings using SolidWorks. The design process involved carefully
+                      measuring the required dimensions and ensuring that the mounting holes would precisely align with the
+                      corresponding points on the robotic arm structure. While the internal components of the stepper motors
+                      would likely be standard, the custom-designed housings would guarantee a perfect fit, which is crucial
+                      for the structural integrity and functionality of the robotic arm. This project highlights the ability
+                      of 3D printing to create custom mechanical components tailored to specific design needs.
                  </p>
             </section>
 
@@ -470,34 +503,34 @@
             <section>
                  <h3 class="text-xl font-semibold mb-3 text-blue-700">Key Skills & Learnings:</h3>
                  <ul class="list-disc list-inside space-y-3 text-gray-700 mb-6 pl-4">
-                     <li>Advanced CAD modeling for additive manufacturing, including designing for specific functional
-                          requirements and constraints.</li>
-                     <li>Understanding the properties of different 3D printing materials (e.g., PLA, ABS) and selecting the
-                          appropriate material for each application.</li>
-                     <li>Optimizing 3D print settings (e.g., layer height, infill density) to achieve the desired strength,
-                          accuracy, and surface finish.</li>
-                     <li>Reverse engineering and creating custom components to integrate with existing machinery and systems.</li>
-                     <li>Problem-solving through iterative design and prototyping using 3D printing.</li>
+                      <li>Advanced CAD modeling for additive manufacturing, including designing for specific functional
+                           requirements and constraints.</li>
+                      <li>Understanding the properties of different 3D printing materials (e.g., PLA, ABS) and selecting the
+                           appropriate material for each application.</li>
+                      <li>Optimizing 3D print settings (e.g., layer height, infill density) to achieve the desired strength,
+                           accuracy, and surface finish.</li>
+                      <li>Reverse engineering and creating custom components to integrate with existing machinery and systems.</li>
+                      <li>Problem-solving through iterative design and prototyping using 3D printing.</li>
                  </ul>
             </section>
 
             <section>
                  <h3 class="text-xl font-semibold mb-3 text-blue-700">Technologies Used:</h3>
                  <div class="flex flex-wrap gap-2 mb-6">
-                     <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">SolidWorks</span>
-                     <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Fusion 360</span>
-                     <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">CAD Modeling</span>
-                     <span class="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">3D Printing (FDM)</span>
-                     <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Slicer Software (Cura)</span>
-                     <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Slicer Software (PrusaSlicer)</span>
-                     <span class="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">[Specify Printer Model(s)]</span>
-                     <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">PLA Filament</span>
-                     <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">ABS Filament</span>
+                      <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">SolidWorks</span>
+                      <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Fusion 360</span>
+                      <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">CAD Modeling</span>
+                      <span class="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">3D Printing (FDM)</span>
+                      <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Slicer Software (Cura)</span>
+                      <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Slicer Software (PrusaSlicer)</span>
+                      <span class="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">[Specify Printer Model(s)]</span>
+                      <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">PLA Filament</span>
+                      <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">ABS Filament</span>
                  </div>
             </section>
         </div>
 
-        </main>
+    </main>
 
     <footer id="contact" class="bg-gray-800 text-gray-300 py-10 mt-16">
         <div class="container mx-auto px-6 text-center">
@@ -530,16 +563,29 @@
             menuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
             mobileNavLinks.forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); });
         }
+        
+        // Initialize Swiper for the new Hero Slideshow
+        const heroSwiper = new Swiper('.hero-swiper', {
+            loop: true,
+            autoplay: {
+                delay: 3000, // 3 seconds per slide
+                disableOnInteraction: false, // Autoplay continues even after user interacts
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
 
         // Initialize Swiper for the Rover section
         const roverSwiper1 = new Swiper('.rover-swiper-1', {
-            loop: false, // Disable loop
+            loop: false, 
             grabCursor: true,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
             },
-            navigation: false, // Disable navigation arrows
+            navigation: false, 
         });
 
         const roverSwiper2 = new Swiper('.rover-swiper-2', {

@@ -1,4 +1,4 @@
-`<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Style for the active nav link */
+        .nav-active {
+            color: #2563eb; /* blue-600 */
+            font-weight: 500;
+        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -16,14 +21,14 @@
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-blue-600">Ravi Teja Chevuri</a>
-             <div class="space-x-6 text-lg hidden md:flex">
+              <div class="space-x-6 text-lg hidden md:flex">
                 <a href="index.html#about" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">About</a>
                 <a href="index.html#experience" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Experience</a>
                 <a href="index.html#education" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Education</a>
                 <a href="index.html#projects" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Projects</a>
                 <a href="index.html#contact" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Contact</a>
             </div>
-             <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+              <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
@@ -39,15 +44,15 @@
     <main class="container mx-auto px-6 py-12">
 
         <section id="hero" class="text-center mb-16 pt-8 md:pt-12 flex flex-col md:flex-row items-center gap-8">
-             <div class="flex-shrink-0 mb-6 md:mb-0">
+              <div class="flex-shrink-0 mb-6 md:mb-0">
                 <img
                     src="./static/me.jpeg"
                     alt="Ravi Teja Chevuri Profile Picture"
                     class="rounded-full w-42 h-42 md:w-60 md:h-60 object-cover border-4 border-blue-200 shadow-lg mx-auto"
                     onerror="this.onerror=null; this.src='https://placehold.co/150x150/e2e8f0/64748b?text=Image+Error';"
-                 >
+                   >
             </div>
-             <div class="md:text-left text-center">
+              <div class="md:text-left text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-3">Ravi Teja Chevuri</h1>
                 <p class="text-xl text-gray-600 mb-5">Mechanical Design Engineer | Solidworks Expert | Automation Enthusiast</p>
                 <p class="max-w-3xl mx-auto md:mx-0 text-lg text-gray-700">
@@ -129,19 +134,32 @@
         </section>
 
         <section id="projects" class="mb-16">
-             <h2 class="text-3xl font-bold mb-8 border-l-4 border-blue-600 pl-4">Projects</h2>
-             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <h2 class="text-3xl font-bold mb-8 border-l-4 border-blue-600 pl-4">Projects</h2>
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                    <img src="./static/3dModel.jpeg" alt="3D Modeling & 3D Printing Projects" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Img+Error';">
+                    <div id="slideshow-3d-model" class="relative w-full h-48">
+                        <div class="slide w-full h-full">
+                            <img src="./static/3dModel.jpeg" alt="3D Modeling - 3 Jaw Chuck" class="w-full h-full object-cover">
+                        </div>
+                        <div class="slide w-full h-full hidden">
+                            <img src="./static/watch.jpeg" alt="4-Speed Gearbox Model" class="w-full h-full object-cover">
+                        </div>
+                        <div class="slide w-full h-full hidden">
+                            <img src="./static/watch_explore.jpeg" alt="ANSYS Analysis Screenshot" class="w-full h-full object-cover">
+                        </div>
+                        <div class="slide w-full h-full hidden">
+                            <img src="./static/img_3625.jpeg" alt="ANSYS Analysis Screenshot" class="w-full h-full object-cover">
+                        </div>
+                        </div>
+
                    <div class="p-6 flex flex-col flex-grow">
                        <h3 class="text-xl font-semibold mb-2 text-blue-700">3D Modeling & 3D Printing Projects</h3>
                        <p class="text-gray-600 mb-4 text-sm flex-grow">Developed models like a lathe 3-jaw chuck and a 4-speed gearbox (with ANSYS analysis).</p>
                         <a href="project_3d_printing.html" class="mt-auto inline-block bg-blue-100 text-blue-700 font-medium py-2 px-4 rounded-md hover:bg-blue-200 transition duration-300 text-center">View Details</a>
                    </div>
-               </div>
-               
-               <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
                 <img src="./static/EV_car.JPG" alt="Electric Vehicle Conversion" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Img+Error';">
                <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-semibold mb-2 text-blue-700">Electric Vehicle Conversion - Maruti 800</h3>
@@ -157,7 +175,7 @@
                        <p class="text-gray-600 mb-4 text-sm flex-grow">Built a CNC laser cutter using Arduino, stepper motors/drivers, and OpenBuildsCONTROL.</p>
                         <a href="project_cnc_laser.html" class="mt-auto inline-block bg-blue-100 text-blue-700 font-medium py-2 px-4 rounded-md hover:bg-blue-200 transition duration-300 text-center">View Details</a>
                    </div>
-               </div>
+                </div>
 
                <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
                     <img src="./static/bom.png" alt="BOM Automation Project" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/e2e8f0/64748b?text=Img+Error';">
@@ -169,8 +187,7 @@
                 </div>
 
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-                     <!-- <img src="./static/macro.png" alt="SolidWorks Macro Automation" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://youtu.be/bX4SZfrD5_c?si=8KXEvHaq93qNFJKm"> -->
-                    <div class="p-6 flex flex-col flex-grow">
+                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-semibold mb-2 text-blue-700">SolidWorks Macro Automation</h3>
                         <p class="text-gray-600 mb-4 text-sm flex-grow">Developed VBA macros (with ChatGPT assistance) for batch conversion of SolidWorks assembly files.</p>
                          <a href="project_solidworks_macro.html" class="mt-auto inline-block bg-blue-100 text-blue-700 font-medium py-2 px-4 rounded-md hover:bg-blue-200 transition duration-300 text-center">View Details</a>
@@ -185,11 +202,6 @@
                          <a href="project_robotic_arm.html" class="mt-auto inline-block bg-blue-100 text-blue-700 font-medium py-2 px-4 rounded-md hover:bg-blue-200 transition duration-300 text-center">View Details</a>
                     </div>
                 </div>
-
-                
-
-                
-
             </div>
         </section>
 
@@ -205,8 +217,8 @@
                 <a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-white transition duration-300">Naukri</a>
                 <a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-white transition duration-300">Instagram</a>
             </div>
-             <p class="text-sm text-gray-500">&copy; <span id="currentYear"></span> Ravi Teja Chevuri. All rights reserved.</p>
-             <p class="text-xs text-gray-600 mt-2">Location: Vizag, Andhra Pradesh, India</p>
+               <p class="text-sm text-gray-500">&copy; <span id="currentYear"></span> Ravi Teja Chevuri. All rights reserved.</p>
+               <p class="text-xs text-gray-600 mt-2">Location: Vizag, Andhra Pradesh, India</p>
         </div>
     </footer>
 
@@ -219,60 +231,34 @@
         const navLinks = document.querySelectorAll('header nav a.nav-link'); // Target only main desktop nav links
 
         const activateNavLink = () => {
-            // Only run scroll-based highlighting on the main page (index.html)
-            if (window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html') || window.location.pathname === '') {
-                let currentSectionId = 'hero'; // Default to hero or about if at top
-                 // Check if scrolled past the top threshold
-                if (pageYOffset > 100) { // Adjust threshold as needed
-                    sections.forEach(section => {
-                        const sectionTop = section.offsetTop;
-                        const sectionHeight = section.clientHeight;
-                        // Check if section is in viewport (adjust offset as needed for header height)
-                        if (pageYOffset >= sectionTop - sectionHeight / 2 - 80) { // 80px offset for header
-                            currentSectionId = section.getAttribute('id');
-                        }
-                    });
-                } else {
-                    // If near the top, check if #about exists, otherwise default to first link or hero
-                     const aboutSection = document.getElementById('about');
-                     if (aboutSection && pageYOffset < aboutSection.offsetTop - 80) {
-                         currentSectionId = 'about'; // Or keep 'hero' if you prefer nothing active at the very top
-                     }
+            let currentSectionId = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) { // Offset for header height
+                    currentSectionId = section.getAttribute('id');
                 }
+            });
 
-
-                navLinks.forEach(link => {
-                    link.classList.remove('nav-active');
-                    // Handle hash links correctly
-                    if (link.getAttribute('href') === `index.html#${currentSectionId}` || link.getAttribute('href') === `#${currentSectionId}`) {
-                         link.classList.add('nav-active');
-                    }
-                });
-            } else {
-                 // On other pages (like project pages), just highlight "Projects"
-                 navLinks.forEach(link => {
-                     link.classList.remove('nav-active');
-                     if (link.getAttribute('href').includes('#projects')) { // Check if the link is for the projects section
-                         link.classList.add('nav-active');
-                     }
-                 });
-            }
+            navLinks.forEach(link => {
+                link.classList.remove('nav-active');
+                if (link.getAttribute('href').includes(currentSectionId)) {
+                    link.classList.add('nav-active');
+                }
+            });
         };
 
         // Add scroll event listener
         window.addEventListener('scroll', activateNavLink);
-
-        // Initial call to set active link on page load/refresh
         document.addEventListener('DOMContentLoaded', activateNavLink);
-        // --- End Active Navigation Link Highlighting ---
 
 
-         // --- Mobile Menu Toggle ---
-         const menuButton = document.getElementById('mobile-menu-button');
-         const mobileMenu = document.getElementById('mobile-menu');
-         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link'); // Links inside mobile menu
+       // --- Mobile Menu Toggle ---
+       const menuButton = document.getElementById('mobile-menu-button');
+       const mobileMenu = document.getElementById('mobile-menu');
+       const mobileNavLinks = document.querySelectorAll('.mobile-nav-link'); // Links inside mobile menu
 
-         if (menuButton && mobileMenu) {
+       if (menuButton && mobileMenu) {
              menuButton.addEventListener('click', () => {
                  mobileMenu.classList.toggle('hidden');
              });
@@ -283,8 +269,49 @@
                      mobileMenu.classList.add('hidden');
                  });
              });
-         }
-         // --- End Mobile Menu Toggle ---
+       }
+
+       // --- START: AUTOMATIC Slideshow Logic ---
+       const slideshow = document.getElementById('slideshow-3d-model');
+       if (slideshow) {
+           const slides = slideshow.querySelectorAll('.slide');
+           const prevBtn = slideshow.querySelector('.prev-btn'); // This will be null, but that's okay
+           const nextBtn = slideshow.querySelector('.next-btn'); // This will also be null
+           let currentSlide = 0;
+           
+           function showSlide(index) {
+               slides.forEach(slide => slide.classList.add('hidden'));
+               slides[index].classList.remove('hidden');
+           }
+           
+           function nextSlide() {
+               currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+               showSlide(currentSlide);
+           }
+
+           // The event listeners for buttons won't run if buttons don't exist, which is fine.
+           if(prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+                    showSlide(currentSlide);
+                    clearInterval(slideInterval);
+                    slideInterval = setInterval(nextSlide, 3000);
+                });
+           }
+            
+           if(nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    nextSlide();
+                    clearInterval(slideInterval);
+                    slideInterval = setInterval(nextSlide, 3000);
+                });
+           }
+
+           // Start the automatic slideshow
+           showSlide(0);
+           let slideInterval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
+       }
+       // --- END: Slideshow Logic ---
 
     </script>
 
