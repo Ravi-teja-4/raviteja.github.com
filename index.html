@@ -218,9 +218,9 @@
             </div>
 
             <!-- 👇 Visitor Counter -->
-            <p class="text-sm text-gray-400 mb-2">
-                Visitor Count: <span id="visits" class="font-semibold text-blue-400"></span>
-            </p>
+            <a href="https://hits.seeyoufarm.com">
+               <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fravi-teja-4.github.io&count_bg=%231D4ED8&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visitors&edge_flat=false"/>
+            </a>
 
             <p class="text-sm text-gray-500">&copy; <span id="currentYear"></span> Ravi Teja Chevuri. All rights reserved.</p>
             <p class="text-xs text-gray-600 mt-2">Location: Vizag, Andhra Pradesh, India</p>
@@ -230,12 +230,7 @@
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // --- Visitor Counter (CountAPI) ---
-        fetch('https://api.countapi.xyz/hit/ravi-teja-4.github.io/visits')
-          .then(res => res.json())
-          .then(res => {
-            document.getElementById('visits').innerText = res.value;
-          });
+
 
 
         // --- Active Navigation Link Highlighting on Scroll (for index.html) ---
