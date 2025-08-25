@@ -205,6 +205,7 @@
 
     </main>
 
+       <!-- ===== FOOTER ===== -->
     <footer id="contact" class="bg-gray-800 text-gray-300 py-10">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-2xl font-semibold mb-6">Get In Touch</h2>
@@ -215,14 +216,27 @@
                 <a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-white transition duration-300">Naukri</a>
                 <a href="#" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-white transition duration-300">Instagram</a>
             </div>
-               <p class="text-sm text-gray-500">&copy; <span id="currentYear"></span> Ravi Teja Chevuri. All rights reserved.</p>
-               <p class="text-xs text-gray-600 mt-2">Location: Vizag, Andhra Pradesh, India</p>
+
+            <!-- 👇 Visitor Counter -->
+            <p class="text-sm text-gray-400 mb-2">
+                Visitor Count: <span id="visits" class="font-semibold text-blue-400"></span>
+            </p>
+
+            <p class="text-sm text-gray-500">&copy; <span id="currentYear"></span> Ravi Teja Chevuri. All rights reserved.</p>
+            <p class="text-xs text-gray-600 mt-2">Location: Vizag, Andhra Pradesh, India</p>
         </div>
     </footer>
-
     <script>
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // --- Visitor Counter (CountAPI) ---
+        fetch('https://api.countapi.xyz/hit/ravi-teja-4.github.io/visits')
+          .then(res => res.json())
+          .then(res => {
+            document.getElementById('visits').innerText = res.value;
+          });
+
 
         // --- Active Navigation Link Highlighting on Scroll (for index.html) ---
         const sections = document.querySelectorAll('section[id]');
